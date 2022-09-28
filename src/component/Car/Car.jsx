@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Box, Container, SimpleGrid, Flex, Image, Text } from '@chakra-ui/react'
 import axios from 'axios'
 import { useState } from 'react'
+import { SingleCar } from './SingleCar'
 
 
 export const Car = () => {
@@ -94,7 +95,7 @@ export const Car = () => {
           </Flex>
           </Box>
 
-          
+
           </Box>
 
           
