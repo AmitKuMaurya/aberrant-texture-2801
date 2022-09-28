@@ -1,0 +1,91 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "image" : "https://apollo-singapore.akamaized.net/v1/files/27liofds3ofy-IN/image;s=300x600;q=60",
+      "title": "BMW 3 Series GT",
+      "price" :  "2000000",
+      "year" : "2000",
+      "km" : "12000km",
+       "place" : "kochi",
+       "date" : "19 Sep"
+    },
+    {
+      "id": 2,
+      "image" : "https://apollo-singapore.akamaized.net/v1/files/ukjxph1cgn6i1-IN/image;s=300x600;q=60",
+      "title": "Mercedes-Benz C-Class",
+      "price" :  "2000000",
+      "year" : "2000",
+      "km" : "12000km",
+       "place" : "Kochi MG Road, Edathala",
+       "date" : "19 Sep"
+
+    },
+    {
+      "id": 3,
+      "image" : "https://apollo-singapore.akamaized.net/v1/files/4rtxaoqak0lb3-IN/image;s=300x600;q=60",
+      "title": "BMW 3 Series GT",
+      "price" :  "2000000",
+      "year" : "2000",
+      "km" : "12000km",
+       "place" : "kochi",
+       "date" : "19 Sep"
+
+    },
+    {
+      "id": 4,
+      "image" : "https://apollo-singapore.akamaized.net/v1/files/27liofds3ofy-IN/image;s=300x600;q=60",
+      "title": "BMW 3 Series GT",
+      "price" :  "2000000",
+      "year" : "2000",
+      "km" : "12000km",
+       "place" : "kochi",
+       "date" : "19 Sep"
+
+    },
+    {
+      "id": 5,
+      "image" : "https://apollo-singapore.akamaized.net/v1/files/bnrboeppoksu1-IN/image;s=300x600;q=60",
+      "title": "BMW 3 Series GT",
+      "price" :  "2000000",
+      "year" : "2000",
+      "km" : "12000km",
+       "place" : "kochi",
+       "date" : "19 Sep"
+
+    },
+    {
+      "id": 6,
+      "image" : "https://apollo-singapore.akamaized.net/v1/files/27liofds3ofy-IN/image;s=300x600;q=60",
+      "title": "BMW 3 Series GT",
+      "price" :  "2000000",
+      "year" : "2000",
+      "km" : "12000km",
+       "place" : "kochi",
+       "date" : "19 Sep"
+
+    },
+    {
+      "id": 7,
+      "image" : "https://apollo-singapore.akamaized.net/v1/files/27liofds3ofy-IN/image;s=300x600;q=60",
+      "title": "BMW 3 Series GT",
+      "price" :  "2000000",
+      "year" : "2000",
+      "km" : "12000km",
+       "place" : "kochi",
+       "date" : "19 Sep"
+
+    },
+    {
+      "id": 8,
+      "image" : "https://apollo-singapore.akamaized.net/v1/files/27liofds3ofy-IN/image;s=300x600;q=60",
+      "title": "BMW 3 Series GT",
+      "price" :  "2000000",
+      "year" : "2000",
+      "km" : "12000km",
+       "place" : "kochi",
+       "date" : "19 Sep"
+
+    }
+  ]
+}
