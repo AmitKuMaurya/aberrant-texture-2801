@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import FilterComp from "../Components/FilterComp";
+import MobileList from "../Components/MobileList";
 
 const Mobiles = () => {
   return (
-    <div>Mobiles</div>
-  )
-}
+    <div>
+      <FilterComp />
+      <MobileList />
+    </div>
+  );
+};
 
-export default Mobiles
+export default Mobiles;
