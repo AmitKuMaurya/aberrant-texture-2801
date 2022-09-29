@@ -1,11 +1,11 @@
-import { Img } from "@chakra-ui/react";
+import { Img, Stack } from "@chakra-ui/react";
 import React from "react";
 import banner from "../Image/banner.png";
 const HomePage = () => {
   return (
-    <div>
+    <Stack h="1000px">
       <Img src={banner} alt="banner" />
-    </div>
+    </Stack>
   );
 };
 
