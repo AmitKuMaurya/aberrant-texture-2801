@@ -3,6 +3,7 @@ import { Box, Container, SimpleGrid, Flex, Image, Text } from '@chakra-ui/react'
 import axios from 'axios'
 import { useState } from 'react'
 import { SingleCar } from './SingleCar'
+import style from "../Mobile/mobile.module.css"
 
 
 export const Car = () => {
@@ -81,16 +82,20 @@ export const Car = () => {
       {data.map((car) => (
           <Box key={car.id}  style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", minHeight: "100px",
           overflow: "hidden"}} height={["300px"]}> 
-           <Box padding="0 2rem" height="60%">  
+
+
+{ car.id < 4  ? <Text align="left" fontSize="10px" fontWeight="700"  border="1px solid black" width="65px" bgColor="#ffce32" m="5px" textAlign="center"> FEATURED</Text> : ""}
+
+           <Box padding="0 2rem"  height="50%" >  
            <Image  src={car.image} height="100%" pt="2px"/>
           </Box>
 
-          <Box padding="0 1rem" height="40%" mt="1rem">
+          <Box padding="0 1rem" height="40%" mt="1rem" className= {car.id < 4 ? style.yellowLine : style.noYellowLine}>  
           <Text align="left" mb="0.2rem" style={{fontWeight : "700",  letterSpacing: ".16px"}}>₹ {car.price}</Text>
-          <Text align="left" mb="0.2rem" fontSize={["xs","xs", "sm"]} color="#9badaf">{car.year}-{car.km}</Text>
+          <Text align="left" mb="0.2rem" fontSize={["xs","xs", "xs"]} color="#9badaf">{car.year}-{car.driven} Km</Text>
           <Text align="left" mb="0.2rem" fontSize={["sm","md", "md"]} style={{fontWeight : "600"}}>{car.title}</Text>
           <Flex justifyContent="space-between" mb="0.2rem">
-          <Text fontSize={["xs","xs", "xs"]} fontWeight="lighter">{car.place}</Text>
+          <Text fontSize={["xs","xs", "xs"]} fontWeight="lighter">{car.city},{car.state}</Text>
           <Text fontSize={["xs","xs", "xs"]} >{car.date}</Text>
           </Flex>
           </Box>
