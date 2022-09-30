@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, Button, Heading,Stack, Text } from "@chakra-ui/react";
-import {AiOutlineCar,AiOutlineMobile} from "react-icons/ai";
+import { Box, Heading,SimpleGrid,Stack, Text } from "@chakra-ui/react";
+import {AiOutlineCar,AiOutlineMobile,AiOutlineRight} from "react-icons/ai";
 import {TbBuildingSkyscraper} from 'react-icons/tb'
 import {RiShoppingBagLine,RiEBike2Line} from "react-icons/ri";
 import {FcElectronics} from 'react-icons/fc';
@@ -8,67 +8,69 @@ import {GiTransparentSlime,GiFullWoodBucket,GiAnimalSkull} from 'react-icons/gi'
 import {SiAltiumdesigner} from 'react-icons/si';
 import {MdSportsTennis} from 'react-icons/md';
 import {GrServices} from 'react-icons/gr';
+import { Link } from 'react-router-dom';
+import FootStrip from './FootStrip';
 
 const categorylist = [
   {
     id: 1,
     title: "OLX Autos (Cars)",
-    icon : <AiOutlineCar/>
+    icon : <AiOutlineCar fontSize={"1.4rem"}  />
   },
   {
     id: 2,
     title: "Properties",
-    icon : <TbBuildingSkyscraper/>
+    icon : <TbBuildingSkyscraper fontSize={"1.4rem"}  />
   },
   {
     id: 3,
     title: "Mobiles",
-    icon : <AiOutlineMobile/>,
+    icon : <AiOutlineMobile fontSize={"1.4rem"}  />,
   },
   {
     id: 4,
     title: "Jobs",
-    icon : <RiShoppingBagLine/>,
+    icon : <RiShoppingBagLine fontSize={"1.4rem"}  />,
   },
   {
     id: 5,
     title: "Bikes",
-    icon : <RiEBike2Line/>,
+    icon : <RiEBike2Line fontSize={"1.4rem"}  />,
   },
   {
     id: 6,
     title: "Electronics & Appliances",
-    icon : <FcElectronics/>,
+    icon : <FcElectronics fontSize={"1.4rem"}  />,
   },
   {
     id: 7,
     title: "Commercial Vehicles & Spares",
-    icon : <GiTransparentSlime/>,
+    icon : <GiTransparentSlime fontSize={"1.4rem"}  />,
   },
   {
     id: 8,
     title: "Furniture",
-    icon : <GiFullWoodBucket/>,
+    icon : <GiFullWoodBucket fontSize={"1.4rem"}  />,
   },
   {
     id: 9,
     title: "Fashion",
-    icon : <SiAltiumdesigner/>,
+    icon : <SiAltiumdesigner fontSize={"1.4rem"}  />,
   },
   {
     id: 10,
     title: "Books, Sports & Hobbies",
-    icon : <MdSportsTennis/>,
+    icon : <MdSportsTennis fontSize={"1.4rem"}  />,
   },
   {
     id: 11,
     title: "Pets",
-    icon : <GiAnimalSkull/>,
+    icon : <GiAnimalSkull fontSize={"1.4rem"}  />,
   },
   {
     id: 12,
     title: "Services",
-    icon : <GrServices/>,
+    icon : <GrServices fontSize={"1.4rem"}  />,
   }
 ];
 
@@ -79,20 +81,31 @@ function SellComponents() {
         <Heading >
         POST YOUR AD
       </Heading>
+    <SimpleGrid maxWidth={"60%"} margin={"auto"} border={"1px solid #ebeaea"} >
 
+        <Heading style={{marginLeft:"1.5rem"}} as={"h4"} textAlign={"left"}>CHOOSE A CATEGORY</Heading>
       {categorylist.map((item) => (
-        <Box key={item.id}>
+          <Box key={item.id}>
+          <Stack style={{display:"flex"}} border={"1px solid #ebeaea"} maxW={"40%"}>
+           <Box style={{display:"flex", alignItems:"center",justifyContent:"space-between"}}>
 
-          <Stack>
-           <div style={{display:"flex", alignItems:"center"}}>
+           <Box style={{display:"flex", alignItems:"center",justifyContent:'flex-start'}} >
+            <span style={{marginRight:"1rem",marginLeft:"0.5rem"}}>
             {item.icon}
-            <Text maxW={"20rem"} padding={"0.6rem 0.4rem"} border={"1px solid grey"} marginTop={"1rem"} >{item.title}
-            </Text>
-           </div>
+            </span>
+            <Link to={"/sellpost/postform"} style={{textDecoration:"none", color:"grey"}} ><Text maxW={"15rem"} textAlign={"left"} >{item.title}</Text></Link>
+           </Box>
             
+            <Box style={{display:"flex", alignItems:"center",justifyContent:'flex-end'}} >
+            <AiOutlineRight fontSize={"1.5rem"} />
+            </Box>
+           </Box>
           </Stack>
         </Box>
       ))}
+      </SimpleGrid>
+
+      <FootStrip/>
     </>
   )
 }

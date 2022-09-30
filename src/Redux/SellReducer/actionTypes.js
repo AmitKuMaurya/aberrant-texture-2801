@@ -1,0 +1,4 @@
+
+export const   POST_REQUEST_FORM = "POST_REQUEST_FORM";
+export const   POST_SUCCESS_FORM = "POST_SUCCESS_FORM";
+export const   POST_FAILURE_FORM = "POST_FAILURE_FORM";
