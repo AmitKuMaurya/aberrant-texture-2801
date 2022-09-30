@@ -26,7 +26,7 @@ export const Mobile = () => {
 
   return (
  <>
-    <Text fontSize="2xl" fontWeight="600" align ="left" width="80%" margin="auto">Used mobiles in Kochi</Text>
+    <Text fontSize="2xl" fontWeight="600" align ="left" width="80%" margin="auto">Used mobiles in India</Text>
 
   {/* FILTER COMPONENTS */}
 
@@ -62,16 +62,16 @@ export const Mobile = () => {
 
     <Box  width="70%" style={{boxShadow:"rgba(149, 157, 165, 0.2) 0px 8px 24px"}}>
         <Flex justifyContent="space-between" mb="10px">
-        <Text  fontSize={["xs","sm","md"]}>29,970 ads near you</Text>
+        <Text  fontSize={["xs","sm","md"]}>2590 ads</Text>
         <Box>
           <Flex>
           <Text fontWeight="bold" fontSize={["xs", "sm", "md"]}>Sort By:</Text>
           <select>
-           <option value="volvo">Relevance</option>
-           <option value="saab">Price: Low to High</option>
-           <option value="vw">Price: High to Low</option>
-           <option value="audi" selected>Distance</option>
-           <option value="audi" selected>Date Published</option>
+           <option >Relevance</option>
+           <option >Price: Low to High</option>
+           <option >Price: High to Low</option>
+           <option >Distance</option>
+           <option >Date Published</option>
         </select>
           </Flex>
         </Box>
