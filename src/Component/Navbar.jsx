@@ -2,14 +2,11 @@ import {
   BellIcon,
   ChatIcon,
   ChevronDownIcon,
- 
   SearchIcon,
 } from "@chakra-ui/icons";
 import {
   Box,
   Button,
-  
- 
   Grid,
   GridItem,
   HStack,
@@ -19,23 +16,37 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
-
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Stack,
-
+  useDisclosure,
+  VStack,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaChevronDown, FaChevronUp, FaUser } from "react-icons/fa";
 import "./Navbar.css";
 import SellButtonPlus from "./SellButtonPlus";
 import olxlogo from "../Image/olxlogo.png";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { Footer } from "./Footer";
+import AllCategories from "./AllCategories";
+import { Login } from "./Login";
+
+const fetchData = (query) => {
+  axios("");
+};
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [isCategoryOpen, setCategoryOpen] = useState(false);
-  const handleCategories = () => {
-    setCategoryOpen(!isCategoryOpen);
-  };
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {});
+
   return (
     <>
       <Stack
@@ -45,6 +56,7 @@ const Navbar = () => {
         py={3}
         position="sticky"
         top={0}
+        zIndex={9}
       >
         <Grid
           templateColumns={[
@@ -70,7 +82,6 @@ const Navbar = () => {
                 />
                 <Input
                   borderRadius="none"
-                  type="tel"
                   placeholder="Search City"
                   focusBorderColor="teal.300"
                   border="2px"
@@ -90,11 +101,13 @@ const Navbar = () => {
               <Input
                 colorScheme={"teal"}
                 borderRadius="none"
-                placeholder="Search City"
+                placeholder="Find Cars, Mobile Phones and more..."
                 focusBorderColor="teal.300"
                 border="2px"
                 borderStyle="solid"
                 borderColor="black"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
               />
               <Box
                 border="2px solid black"
@@ -110,15 +123,33 @@ const Navbar = () => {
           </GridItem>
           <GridItem colSpan={1}>
             <HStack spacing={5} justify="right">
-              <ChatIcon w={5} h={5} />
-              <BellIcon w={6} h={6} />
+              <ChatIcon
+                w={5}
+                h={5}
+                cursor="pointer"
+                _hover={{ color: "teal" }}
+              />
+              <BellIcon
+                w={6}
+                h={6}
+                cursor="pointer"
+                _hover={{ color: "teal" }}
+              />
               {/* <Img src="" alt="user image" /> */}
               <IconButton
                 bgColor="gray.200"
                 icon={<FaUser />}
                 borderRadius="full"
+                _hover={{ color: "teal" }}
+                onClick={onOpen}
               />
-              <Button bgColor="white" borderRadius="30px" className="sellbtn">
+              <Login onOpen={onOpen} isOpen={isOpen} onClose={onClose} />
+              <Button
+                _hover={{ bgColor: "white" }}
+                bgColor="white"
+                borderRadius="30px"
+                className="sellbtn"
+              >
                 <SellButtonPlus />
                 Sell
               </Button>
@@ -128,18 +159,31 @@ const Navbar = () => {
       </Stack>
       <HStack
         px={10}
+        h="40px"
         boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
         fontSize="14px"
         spacing="10px"
+        display={["none", "none", "flex", "flex"]}
       >
-        <Button
-          variant="unstyled"
-          textDecoration="none"
-          rightIcon={isCategoryOpen ? <FaChevronUp /> : <FaChevronDown />}
-          onClick={handleCategories}
-        >
-          All Categories
-        </Button>
+        <Menu offset={[-22, 0]}>
+          {({ isOpen }) => (
+            <>
+              <MenuButton
+                isActive={isOpen}
+                variant="unstyled"
+                as={Button}
+                textDecoration="none"
+                rightIcon={isOpen ? <FaChevronUp /> : <FaChevronDown />}
+              >
+                All Categories
+              </MenuButton>
+              <MenuList borderRadius="none" w="96vw">
+                <AllCategories />
+              </MenuList>
+            </>
+          )}
+        </Menu>
+
         <Link to="#" className="navmenu">
           Cars
         </Link>
@@ -162,6 +206,35 @@ const Navbar = () => {
           For Rent: Houses & Apartments
         </Link>
       </HStack>
+
+      <VStack display={["flex", "flex", "none", "none"]} align="left">
+        <Menu offset={[20, 0]}>
+          {({ isOpen }) => (
+            <>
+              {/* <MenuButton
+                isActive={isOpen}
+                as={Button}
+                rightIcon={<ChevronDownIcon />}
+              >
+                {isOpen ? "Close" : "Open"}
+              </MenuButton> */}
+
+              <MenuButton
+                isActive={isOpen}
+                variant="unstyled"
+                as={Button}
+                textDecoration="none"
+                rightIcon={isOpen ? <FaChevronUp /> : <FaChevronDown />}
+              >
+                All Categories
+              </MenuButton>
+              <MenuList borderRadius="none" w="92vw">
+                <AllCategories />
+              </MenuList>
+            </>
+          )}
+        </Menu>
+      </VStack>
     </>
   );
 };
