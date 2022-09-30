@@ -22,6 +22,15 @@ const postReducer = (oldState = initialState, action) => {
           isError: true,
           aidDetails: [],
         };
+
+        case types.GET_REQUEST_FORM : 
+        return { ...oldState, isLoading: true }
+
+        case types.GET_SUCCESS_FORM :
+          return { ...oldState , isLoading : false , aidDetails : payload  }
+
+        case types.GET_FAILURE_FORM :
+          return { ...oldState , isLoading: false, aidDetails : [] }
   
       default:
         return oldState;

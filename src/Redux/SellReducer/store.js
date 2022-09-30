@@ -1,6 +1,7 @@
 import {legacy_createStore,applyMiddleware} from "redux";
 
 import {postReducer} from "./reducer";
+// import {} from "./reducer"
 
 import thunk from "redux-thunk";
 

@@ -26,7 +26,7 @@ function SellFormComponent() {
     e.preventDefault();
 
     if(cars && year  && kmDriven && title && description && price && image && location && userName ){
-      dispatch(postProduct({cars , year , kmDriven, title, description , price , location , userName})).then((res)=>{
+      dispatch(postProduct({cars , year , kmDriven, title, description , price ,image, location , userName})).then((res)=>{
         console.log("inside function", res);
         navigate("/sellpost/postform/success");
       })
@@ -206,43 +206,43 @@ function SellFormComponent() {
               <label>State</label>
               <br />
               <select value={location} onChange={(e) =>setLocation(e.target.value)} required >
-                <option value="unknown"></option>
-                <option value="2007598">Andaman &amp; Nicobar Islands</option>
-                <option value="2001145">Andhra Pradesh</option>
-                <option value="2001146">Arunachal Pradesh</option>
-                <option value="2001147">Assam</option>
-                <option value="2001148">Bihar</option>
-                <option value="2001149">Chandigarh</option>
-                <option value="2001178">Chhattisgarh</option>
-                <option value="2001150">Dadra &amp; Nagar Haveli</option>
-                <option value="2001151">Daman &amp; Diu</option>
-                <option value="2001152">Delhi</option>
-                <option value="2001153">Goa</option>
-                <option value="2001154">Gujarat</option>
-                <option value="2001155">Haryana</option>
-                <option value="2001156">Himachal Pradesh</option>
-                <option value="2001157">Jammu &amp; Kashmir</option>
-                <option value="2001158">Jharkhand</option>
-                <option value="2001159">Karnataka</option>
-                <option value="2001160">Kerala</option>
-                <option value="2001161">Lakshadweep</option>
-                <option value="2001162">Madhya Pradesh</option>
-                <option value="2001163">Maharashtra</option>
-                <option value="2001164">Manipur</option>
-                <option value="2001165">Meghalaya</option>
-                <option value="2001166">Mizoram</option>
-                <option value="2001167">Nagaland</option>
-                <option value="2001168">Odisha</option>
-                <option value="2001169">Pondicherry</option>
-                <option value="2001170">Punjab</option>
-                <option value="2001171">Rajasthan</option>
-                <option value="2001172">Sikkim</option>
-                <option value="2001173">Tamil Nadu</option>
-                <option value="2007599">Telangana</option>
-                <option value="2001174">Tripura</option>
-                <option value="2001176">Uttar Pradesh</option>
-                <option value="2001175">Uttaranchal</option>
-                <option value="2001177">West Bengal</option>
+                <option ></option>
+                <option >Andaman &amp; Nicobar Islands</option>
+                <option >Andhra Pradesh</option>
+                <option >Arunachal Pradesh</option>
+                <option >Assam</option>
+                <option >Bihar</option>
+                <option >Chandigarh</option>
+                <option >Chhattisgarh</option>
+                <option >Dadra &amp; Nagar Haveli</option>
+                <option >Daman &amp; Diu</option>
+                <option >Delhi</option>
+                <option >Goa</option>
+                <option >Gujarat</option>
+                <option >Haryana</option>
+                <option >Himachal Pradesh</option>
+                <option >Jammu &amp; Kashmir</option>
+                <option >Jharkhand</option>
+                <option >Karnataka</option>
+                <option >Kerala</option>
+                <option >Lakshadweep</option>
+                <option >Madhya Pradesh</option>
+                <option >Maharashtra</option>
+                <option >Manipur</option>
+                <option >Meghalaya</option>
+                <option >Mizoram</option>
+                <option >Nagaland</option>
+                <option >Odisha</option>
+                <option >Pondicherry</option>
+                <option >Punjab</option>
+                <option >Rajasthan</option>
+                <option >Sikkim</option>
+                <option >Tamil Nadu</option>
+                <option >Telangana</option>
+                <option >Tripura</option>
+                <option >Uttar Pradesh</option>
+                <option >Uttaranchal</option>
+                <option >West Bengal</option>
               </select>
             </div>
 
