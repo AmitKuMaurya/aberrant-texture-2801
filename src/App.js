@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Car } from './component/Car/Car';
+import { Car } from './CategoryPages/Car/Car';
 import { AllRoutes } from './Routes/AllRoutes';
 import { Navbar } from './Routes/Navbar';
 

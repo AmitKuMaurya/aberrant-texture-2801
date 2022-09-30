@@ -2,13 +2,17 @@ import { Text, Box } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-const FilterComp = () => {
+const BikeFilterComp = () => {
+  
   const [searchParams, setSearchParams] = useSearchParams();
   const initialStateFilters = searchParams.getAll("state");
   const initialSortBy = searchParams.getAll("sortBy");
-  const [state, setState] = useState(initialStateFilters || []);
+  const initialBrandFilters = searchParams.getAll('brand');
+  const [state, setState] = useState(initialStateFilters || []);   
 
   const [sortBy, setSortBy] = useState(initialSortBy[0] || "");
+
+  const [brand, setBrand] = useState(initialBrandFilters || [])
 
   const handleFilterCheckbox = (e) => {
     const newStates = [...state];
@@ -22,16 +26,27 @@ const FilterComp = () => {
   const handleSort = (e) => {
     setSortBy(e.target.value);
   };
+  const handleBrandFilterCheckbox =(e) => {
+    const newBrands = [...brand];
+    if(newBrands.includes(e.target.value)){
+        newBrands.splice(newBrands.indexOf(e.target.value), 1);
+    } else {
+        newBrands.push(e.target.value);
+    }
+    console.log(newBrands)
+    setBrand(newBrands);
+  }
   useEffect(() => {
-    if (state || sortBy) {
+    if (state || sortBy || brand) {
       let params = {};
       state && (params.state = state);
       sortBy && (params.sortBy = sortBy);
+      brand && (params.brand = brand);
 
       setSearchParams(params);
     }
-  }, [state, setSearchParams, sortBy]);
-  console.log("SortByValue", sortBy);
+  }, [state, setSearchParams, sortBy,brand]);
+
   return (
     <Box style={{ textAlign: "left"}}>
       <Box style={{borderBottom : "0.2rem solid grey"}} mb="1rem">
@@ -69,12 +84,12 @@ const FilterComp = () => {
         <Box>
           <input
             type="checkbox"
-            value="Delhi"
-            checked={state.includes("Delhi")}
+            value="Goa"
+            checked={state.includes("Goa")}
             onChange={handleFilterCheckbox}
             style={{marginRight : "5px"}}
           />
-          <label>Delhi</label>
+          <label>Goa</label>
         </Box>
         <Box>
           <input
@@ -88,10 +103,99 @@ const FilterComp = () => {
         </Box>
       </Box>
 
+
+      <Text fontSize='xl' fontWeight="bold" mb="10px">BRANDS</Text>
+      <Box style={{borderBottom : "0.2rem solid grey"}} pb="1rem">
+        <Box>
+          <input
+            type="checkbox"
+            value="Hero"
+            checked={brand.includes("Hero")}
+            onChange={handleBrandFilterCheckbox}
+            style={{marginRight : "5px"}}
+          />
+          <label>Hero</label>
+        </Box>
+        <Box>
+          <input
+            type="checkbox"
+            value="Yamaha"
+            checked={brand.includes("Yamaha")}
+            onChange={handleBrandFilterCheckbox}
+            style={{marginRight : "5px"}}
+          />
+          <label>Yamaha</label>
+        </Box>
+        <Box>
+          <input
+            type="checkbox"
+            value="Royal Enfield"
+            checked={brand.includes("Royal Enfield")}
+            onChange={handleBrandFilterCheckbox}
+            style={{marginRight : "5px"}}
+          />
+          <label>Royal Enfield</label>
+        </Box>
+        <Box>
+          <input
+            type="checkbox"
+            value="Hero Honda"
+            checked={brand.includes("Hero Honda")}
+            onChange={handleBrandFilterCheckbox}
+            style={{marginRight : "5px"}}
+          />
+          <label>Hero Honda</label>
+        </Box>
+        <Box>
+          <input
+            type="checkbox"
+            value="BMW"
+            checked={brand.includes("BMW")}
+            onChange={handleBrandFilterCheckbox}
+            style={{marginRight : "5px"}}
+          />
+          <label>BMW</label>
+        </Box>
+        <Box>
+          <input
+            type="checkbox"
+            value="Pulsar"
+            checked={brand.includes("Pulsar")}
+            onChange={handleBrandFilterCheckbox}
+            style={{marginRight : "5px"}}
+          />
+          <label>Pulsar</label>
+        </Box>
+        <Box>
+          <input
+            type="checkbox"
+            value="Bajaj"
+            checked={brand.includes("Bajaj")}
+            onChange={handleBrandFilterCheckbox}
+            style={{marginRight : "5px"}}
+          />
+          <label>Bajaj</label>
+        </Box>
+        <Box>
+          <input
+            type="checkbox"
+            value="KTM"
+            checked={brand.includes("KTM")}
+            onChange={handleBrandFilterCheckbox}
+            style={{marginRight : "5px"}}
+          />
+          <label>KTM</label>
+        </Box>
+      </Box>
+
+
+
+
+
       <Text fontSize='xl' fontWeight="bold" mb="10px">SORT BY</Text>
       <Box onChange={handleSort} style={{borderBottom : "0.2rem solid grey"}} mb="1rem">
         <input
-          type="radio"
+          type="radio"   
           value=""
           name="sortBy"
           defaultChecked={sortBy === ""}
@@ -123,4 +227,4 @@ const FilterComp = () => {
   );
 };
 
-export default FilterComp;
+export default BikeFilterComp;

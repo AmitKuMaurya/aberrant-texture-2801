@@ -1,28 +1,38 @@
 import React, { useEffect } from 'react'
 import { Box, Container, SimpleGrid, Flex, Image, Text } from '@chakra-ui/react'
-import axios from 'axios'
-import { useState } from 'react'
 import style from "./mobile.module.css"
+import MobileFilterComp from '../MobileFilterComp'
+import { useDispatch, useSelector } from 'react-redux'
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
+import { getMobiles } from '../../Redux/Mobiles/action'
 
 
 export const Mobile = () => {
+               
 
-   const [data, setData] = useState([])
+  const mobiles = useSelector((state) => state.MobileReducer.mobiles);
+  const [searchParams] =useSearchParams()
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate()  
 
-    const fetchApi = () => {
-    return   axios.get("http://localhost:3004/mobiles")
-      .then( r => setData(r.data))
-      .catch(e => console.log(e))
+  useEffect(() => {
+    if (location || mobiles.length === 0) {
+        const sortBy = searchParams.get('sortBy')
+        let getMobilesParams = {
+            params: {
+                state: searchParams.getAll('state'),
+                _sort: sortBy && 'price',
+                _order: sortBy,
+                brand: searchParams.getAll('brand')
+            },
+        };
+         console.log(getMobilesParams)
+      dispatch(getMobiles(getMobilesParams));
     }
+  }, [location.search]);
 
 
-     useEffect(() => {
-
-       fetchApi()
-       
-     }, [])
-
-    console.log(data)
 
   return (
  <>
@@ -32,29 +42,8 @@ export const Mobile = () => {
 
   <Flex  style={{ width:"80%", margin: "auto"}} >
   <Container align="left" style={{ width : "30%"}}> 
-    <Box >
-      <Text >CATEGORIES</Text>
-    </Box>
-
-    <Box >
-    <Text >LOCATIONS</Text>
-    </Box>
-
-    <Box >
-    <Text >BRAND AND MODEL</Text>
-    </Box>
-
-    <Box >
-    <Text >ALL MODELS</Text>
-    </Box>
-
-    <Box >
-    <Text >BUDGET</Text>
-    </Box>
-
-    <Box >
-    </Box>
-    
+        
+        <MobileFilterComp/>
 
     </Container>
       
@@ -78,10 +67,10 @@ export const Mobile = () => {
       </Flex>
 
       <SimpleGrid columns={[1, 2, 3]} spacing='30px' bgColor="#ffffff" borderTop="1px solid grey">
-      {data.map((mobile) => (
+      {mobiles.map((mobile) => (
      
       <Box key={mobile.id} style = {{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", minHeight: "100px",
-      overflow: "hidden"}} height={["300px"]} > 
+      overflow: "hidden"}} height={["300px"]} onClick={() => navigate((`/mobiles/${mobile.id}`))}> 
        
       { mobile.id < 4  ? <Text align="left" fontSize="10px" fontWeight="700"  border="1px solid black" width="65px" bgColor="#ffce32" m="5px" textAlign="center"> FEATURED</Text> : ""}
     

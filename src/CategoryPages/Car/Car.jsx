@@ -1,29 +1,39 @@
 import React, { useEffect } from 'react'
 import { Box, Container, SimpleGrid, Flex, Image, Text } from '@chakra-ui/react'
-import axios from 'axios'
-import { useState } from 'react'
-import { SingleCar } from './SingleCar'
 import style from "../Mobile/mobile.module.css"
+import { useDispatch, useSelector } from 'react-redux';
+import {  useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { getCars } from '../../Redux/Cars/action';
+import CarFilterComp from '../CarFilterComp';
 
 
 export const Car = () => {
 
-   const [data, setData] = useState([])
+  const cars = useSelector((state) => state.CarReducer.cars);
+  const [searchParams] =useSearchParams()
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const navigate = useNavigate()  
 
-    const fetchApi = () => {
-    return   axios.get("http://localhost:3004/cars")
-      .then( r => setData(r.data))
-      .catch(e => console.log(e))
+  useEffect(() => {
+    if (location || cars.length === 0) {
+        const sortBy = searchParams.get('sortBy')
+        let getMobilesParams = {
+            params: {
+                state: searchParams.getAll('state'),
+                _sort: sortBy && 'price',
+                _order: sortBy,
+                brand: searchParams.getAll('brand')
+            },
+        };
+         console.log(getMobilesParams)
+      dispatch(getCars(getMobilesParams));
     }
+  }, [location.search]);
 
 
-     useEffect(() => {
+  // console.log("cars", cars)
 
-       fetchApi()
-       
-     }, [])
-
-    console.log(data)
 
   return (
  <>
@@ -33,31 +43,10 @@ export const Car = () => {
 
   <Flex  style={{ width:"80%", margin: "auto"}} >
   <Container align="left" style={{ width : "30%"}}> 
-    <Box >
-      <Text >CATEGORIES</Text>
-    </Box>
-
-    <Box >
-    <Text >LOCATIONS</Text>
-    </Box>
-
-    <Box >
-    <Text >BRAND AND MODEL</Text>
-    </Box>
-
-    <Box >
-    <Text >ALL MODELS</Text>
-    </Box>
-
-    <Box >
-    <Text >BUDGET</Text>
-    </Box>
-
-    <Box >
-    </Box>
+        
+        <CarFilterComp />
     
-
-    </Container>
+  </Container>
       
      {/* PRODUCT GRID  */}
 
@@ -79,9 +68,9 @@ export const Car = () => {
       </Flex>
 
       <SimpleGrid columns={[1, 2, 3]} spacing='30px' bgColor="#ffffff" borderTop="1px solid grey">
-      {data.map((car) => (
+      {cars.map((car) => (
           <Box key={car.id}  style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", minHeight: "100px",
-          overflow: "hidden"}} height={["300px"]}> 
+          overflow: "hidden"}} height={["300px"]} onClick={() => navigate((`/cars/${car.id}`))}> 
 
 
 { car.id < 4  ? <Text align="left" fontSize="10px" fontWeight="700"  border="1px solid black" width="65px" bgColor="#ffce32" m="5px" textAlign="center"> FEATURED</Text> : ""}

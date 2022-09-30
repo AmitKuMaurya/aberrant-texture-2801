@@ -1,10 +1,11 @@
 import { Route, Routes } from "react-router-dom"
-import { Bike } from "../component/Bike/Bike"
-import { SingleBike } from "../component/Bike/SingleBike"
-import { Car } from "../component/Car/Car"
-import { SingleCar } from "../component/Car/SingleCar"
-import { Mobile } from "../component/Mobile/Mobile"
-import { SingleMobile } from "../component/Mobile/SingleMobile"
+import { Bike } from "../CategoryPages/Bike/Bike"
+import { SingleBike } from "../CategoryPages/Bike/SingleBike"
+import { Car } from "../CategoryPages/Car/Car"
+import { SingleCar } from "../CategoryPages/Car/SingleCar"
+import { Mobile } from "../CategoryPages/Mobile/Mobile"
+import { SingleMobile } from "../CategoryPages/Mobile/SingleMobile"
+
 
 
 export const AllRoutes = () => {

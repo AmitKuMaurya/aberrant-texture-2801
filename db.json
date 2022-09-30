@@ -14,8 +14,8 @@
       "description": "Here's our updated list for 2021, because when car companies compete for top-speed bragging rights, the world wins.",
       "price":40000,
       "image":"https://imageio.forbes.com/specials-images/imageserve/5f962df3991e5636a2f68758/0x0.jpg?format=jpg&crop=812,457,x89,y103,safe&width=1200",
-      "state":"Madhya Pradesh",
-      "city":"Indore",
+      "state":"Goa",
+      "city":"calangute",
       "name":"",  "date" : "Sep 19"
 
     },
@@ -460,7 +460,7 @@
     },
     {
       "id": 5,
-      "brand": "",
+      "brand": "Honda",
       "year": 2012, 
       "driven": 3545, 
       "title":"Honda Unicorn",
@@ -506,7 +506,7 @@
       "description": "New digital meeter",
       "price": 52000,
       "image":"https://apollo-singapore.akamaized.net/v1/files/2xmv4lr7tun72-IN/image;s=300x600;q=60",
-      "state":"Delhi",
+      "state":"Goa",
       "city":"Lajpat Nagar",
       "name":"",  "date" : "Sep 29"
     },
@@ -584,7 +584,7 @@
       "description": "",
       "price":84000,
       "image":"https://apollo-singapore.akamaized.net/v1/files/hw1n63g94ef81-IN/image;s=300x600;q=60",
-      "state":"Delhi",
+      "state":"Goa",
       "city":"Patparganj,",
       "name":"",  "date" : "Apr 21"
     },
@@ -763,8 +763,8 @@
       "description": "Camera Features: AI scene enhancement, Dual-View Video, HDR, Night Portrait, Panorama Mode, Retouch Filters, 1080p video at 30 fps, SLO-MO: 720p video at 120 fps, TIME-LAPSE: 1080p video at 30 fps, Video editor, Face unlock, Screen flash, HDR, NIGHT, PORTRAIT, TIME-LAPSE, Retouch, Filters",
       "price": 18999,
       "image":"https://m.media-amazon.com/images/I/71V--WZVUIL._SL1500_.jpg",
-      "state":"Madhya Pradesh",
-      "city":"Indore",
+      "state":"Goa",
+      "city":"calangute",
       "name":"",  "date" : "Sep 19"
     },
     {

@@ -6,32 +6,32 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import style from "../Mobile/mobile.module.css"
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { getBikes } from '../../Redux/Bikes/action';
+import { getMobiles } from '../../Redux/Mobiles/action';
 
 
-export const SingleBike = () => {
+
+export const SingleMobile = () => {
 
   const [data, setData] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate()
 
-  const bikes = useSelector((state) => state.BikeReducer.bikes)
+  const mobiles = useSelector((state) => state.MobileReducer.mobiles)
   const dispatch = useDispatch();
 
-  console.log("bikes", bikes)
+  // console.log("mobiles", mobiles)
 
 
- const getBikeById = (id) => {
-    return axios(`http://localhost:3004/bikes/${id}`)
+ const getMobileById = (id) => {
+    return axios(`http://localhost:3004/mobiles/${id}`)
   };
 
   useEffect(() => {
-    getBikeById(id)
+    getMobileById(id)
       .then((r) => {
         setData(r.data);
       })
@@ -39,10 +39,10 @@ export const SingleBike = () => {
         console.log(err)
       });
 
-      dispatch(getBikes());
+       dispatch(getMobiles())
+
   }, [id]);
 
-       console.log("bikes", bikes)
 
   return (
     <>
@@ -58,7 +58,7 @@ export const SingleBike = () => {
         </GridItem>
 
 
-        <GridItem rowSpan={1} colSpan={2} style={{boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px"}} p="1rem">     {/*price card */}
+        <GridItem rowSpan={1} colSpan={2} style={{boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px"}} p="1rem">     {/*price mobiled */}
                <Flex justifyContent="space-between">
                 <Box>
                    <Text fontSize="3xl" fontWeight="bold">₹  {data.price}</Text>
@@ -69,7 +69,7 @@ export const SingleBike = () => {
                 </Flex>
                </Flex>
                <Box>
-                <Text align="left">{data.year} - {data.driven} km</Text>
+                <Text align="left">{data.description}</Text>
                </Box>
                 <Flex justifyContent="space-between">
                 <Text align="right" mt="15%" p="5px">{data.city},{data.state}</Text>
@@ -86,7 +86,7 @@ export const SingleBike = () => {
           <Flex>
            <Image src={data.image} borderRadius="50px" width="50px"/>
            <Box p="0.5rem" align="left"> 
-            <Text fontWeight="bold" fontSize="md">Genuine Bikes By SAAS MOTORS</Text>
+            <Text fontWeight="bold" fontSize="md">Genuine Mobiles By SAAS MOBILES</Text>
             <Text> Member since {data.date}</Text>
            </Box>
           </Flex>
@@ -115,7 +115,7 @@ export const SingleBike = () => {
                 <Text>{data.brand}</Text>
             </Flex>
                 <br />
-            <Flex justifyContent="space-around" color="grey">
+            {/* <Flex justifyContent="space-around" color="grey">
                 <Text align="left">Year</Text>
                 <Spacer />
                 <Text>{data.year}</Text>
@@ -123,13 +123,28 @@ export const SingleBike = () => {
                 <Text>KM driven</Text>
                 <Spacer />
                 <Text>{data.driven}</Text>
-            </Flex>
+            </Flex> */}
           </Box>
+
+
+          <Box p="10px">
+          <Text fontSize="2xl" fontWeight="bold" align="left">Description</Text>          
+          <Text align="left">Courier charges are applicabler</Text>
+          <Text align="left">Cod available all over India</Text>
+          <Text align="left"> With good condition</Text>
+          <Text align="left">Well maintained</Text>
+          <Text align="left">No scratches</Text>
+          <Text align="left">Bluetooth: Yes</Text>
+          <Text align="left">Mobile Outfitters Full Body Protection</Text>
+          <Text align="left">Urgent money</Text>
+          <Text align="left">Genuine customers contact me</Text>
+          </Box>
+
         
          </GridItem>
 
 
-        {/*carousel*/}
+        {/*mobileousel*/}
 
 
         <GridItem rowSpan={4} colSpan={3} style={{boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px"}} p="2rem">
@@ -147,21 +162,21 @@ export const SingleBike = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
- {bikes.map((bike) => (
-          <SwiperSlide>    <Box key={bike.id}  style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", minHeight: "100px",
-          overflow: "hidden"}} height={["300px"]} onClick={() => navigate((`/bikes/${bike.id}`))} >
+ {mobiles.map((mobile) => (
+          <SwiperSlide>    <Box key={mobile.id}  style={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", minHeight: "100px",
+          overflow: "hidden"}} height={["300px"]} onClick={() => navigate((`/mobiles/${mobile.id}`))} >
 
            <Box padding="0 2rem" height="50%">  
-           <Image  src={bike.image} height="100%" pt="2px"/>
+           <Image  src={mobile.image} height="100%" pt="2px"/>
           </Box>
 
-          <Box padding="0 1rem" height="40%" mt="1rem" className= {bike.id < 4 ? style.yellowLine : style.noYellowLine}>  
-          <Text align="left" mb="0.2rem" style={{fontWeight : "700",  letterSpacing: ".16px"}}>₹ {bike.price}</Text>
-          <Text align="left" mb="0.2rem" fontSize={["xs","xs", "sm"]} color="#9badaf">{bike.year}-{bike.driven} km</Text>
-          <Text align="left" mb="0.2rem" fontSize={["sm","md", "md"]} style={{fontWeight : "600"}}>{bike.title}</Text>
+          <Box padding="0 1rem" height="40%" mt="1rem" className= {mobile.id < 4 ? style.yellowLine : style.noYellowLine}>  
+          <Text align="left" mb="0.2rem" style={{fontWeight : "700",  letterSpacing: ".16px"}}>₹ {mobile.price}</Text>
+          <Text align="left" mb="0.2rem" fontSize={["xs","xs", "sm"]} color="#9badaf">{mobile.year}-{mobile.driven} km</Text>
+          <Text align="left" mb="0.2rem" fontSize={["sm","md", "md"]} style={{fontWeight : "600"}}>{mobile.title}</Text>
           <Flex justifyContent="space-between" mb="0.2rem">
-          <Text fontSize={["xs","xs", "xs"]} fontWeight="lighter">{bike.city},{bike.state}</Text>
-          <Text fontSize={["xs","xs", "xs"]} >{bike.date}</Text>
+          <Text fontSize={["xs","xs", "xs"]} fontWeight="lighter">{mobile.city},{mobile.state}</Text>
+          <Text fontSize={["xs","xs", "xs"]} >{mobile.date}</Text>
           </Flex>
           </Box>
 

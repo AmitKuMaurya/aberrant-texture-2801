@@ -1,56 +1,32 @@
 import React, { useEffect } from 'react'
 import { Box, Container, SimpleGrid, Flex, Image, Text } from '@chakra-ui/react'
-// import axios from 'axios'
-// import { useState } from 'react'
 import style from "../Mobile/mobile.module.css"
-// import { SingleBike } from './SingleBike'
-import { Link,useLocation,useNavigate, useSearchParams } from 'react-router-dom'
-import FilterComp from '../FilterComp'
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
+import BikeFilterComp from '../BikeFilterComp'
 import { useDispatch, useSelector } from 'react-redux'
 import { getBikes } from '../../Redux/Bikes/action'
-import { SingleBike } from './SingleBike'
+
 
 
 export const Bike = () => {
-
-  //  const [bikes, setbikes] = useState([])
-   const navigate = useNavigate()
-  // //  <Link to={`/city/${id}`}>{id}</Link>
-
-  //   const fetchApi = () => {
-  //   return   axios.get("http://localhost:3004/bikes")
-  //     .then( r => setbikes(r.bikes))
-  //     .catch(e => console.log(e))
-  //   }
-
-
-  //    useEffect(() => {
-
-  //      fetchApi()
-       
-  //    }, [])
-
-  //   console.log(bikes)
-
-
+    
   const bikes = useSelector((state) => state.BikeReducer.bikes);
   const [searchParams] =useSearchParams()
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate()  
 
   useEffect(() => {
     if (location || bikes.length === 0) {
-
-      const sortBy = searchParams.get('sortBy')
-
+        const sortBy = searchParams.get('sortBy')
         let getBikesParams = {
             params: {
                 state: searchParams.getAll('state'),
-                _sort:  sortBy && "price",
-                _order : sortBy
+                _sort: sortBy && 'price',
+                _order: sortBy,
+                brand: searchParams.getAll('brand')
             },
         };
-        // console.log(getMobilesParams)
       dispatch(getBikes(getBikesParams));
     }
   }, [location.search]);
@@ -69,7 +45,7 @@ export const Bike = () => {
   <Flex  style={{ width:"80%", margin: "auto"}} >
   <Container align="left" style={{ width : "30%"}}> 
         
-        <FilterComp/>
+        <BikeFilterComp/>
   
     </Container>
       
