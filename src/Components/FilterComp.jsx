@@ -33,7 +33,7 @@ const FilterComp = () => {
   console.log("SortByValue", sortBy);
   return (
     <div style={{ textAlign: "left" }}>
-      <h3>FilterComp</h3>
+      <h3>Filter By State</h3>
       <div>
         <div>
           <input

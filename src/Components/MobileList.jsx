@@ -14,12 +14,15 @@ const MobileList = () => {
 
   useEffect(() => {
     if (location || mobiles.length === 0) {
+        const sortBy = searchParams.get('sortBy')
         let getMobilesParams = {
             params: {
-                state: searchParams.getAll('state')
+                state: searchParams.getAll('state'),
+                _sort: sortBy && 'price',
+                _order: sortBy,
             },
         };
-        // console.log(getMobilesParams)
+         console.log(getMobilesParams)
       dispatch(getMobiles(getMobilesParams));
     }
   }, [location.search]);
