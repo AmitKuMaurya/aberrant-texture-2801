@@ -5,9 +5,12 @@ const FilterComp = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const initialStateFilters = searchParams.getAll("state");
   const initialSortBy = searchParams.getAll("sortBy");
-  const [state, setState] = useState(initialStateFilters || []);
+  const initialBrandFilters = searchParams.getAll('brand');
+  const [state, setState] = useState(initialStateFilters || []);   
 
   const [sortBy, setSortBy] = useState(initialSortBy[0] || "");
+
+  const [brand, setBrand] = useState(initialBrandFilters || [])
 
   const handleFilterCheckbox = (e) => {
     const newStates = [...state];
@@ -21,15 +24,26 @@ const FilterComp = () => {
   const handleSort = (e) => {
     setSortBy(e.target.value);
   };
+  const handleBrandFilterCheckbox =(e) => {
+    const newBrands = [...brand];
+    if(newBrands.includes(e.target.value)){
+        newBrands.splice(newBrands.indexOf(e.target.value), 1);
+    } else {
+        newBrands.push(e.target.value);
+    }
+    console.log(newBrands)
+    setBrand(newBrands);
+  }
   useEffect(() => {
-    if (state || sortBy) {
+    if (state || sortBy || brand) {
       let params = {};
       state && (params.state = state);
       sortBy && (params.sortBy = sortBy);
+      brand && (params.brand = brand);
 
       setSearchParams(params);
     }
-  }, [state, setSearchParams, sortBy]);
+  }, [state, setSearchParams, sortBy,brand]);
   console.log("SortByValue", sortBy);
   return (
     <div style={{ textAlign: "left" }}>
@@ -47,11 +61,11 @@ const FilterComp = () => {
         <div>
           <input
             type="checkbox"
-            value="Karnatak"
-            checked={state.includes("Karnatak")}
+            value="Karnataka"
+            checked={state.includes("Karnataka")}
             onChange={handleFilterCheckbox}
           />
-          <label>Karnatak</label>
+          <label>Karnataka</label>
         </div>
         <div>
           <input
@@ -65,22 +79,111 @@ const FilterComp = () => {
         <div>
           <input
             type="checkbox"
-            value="DELHI"
-            checked={state.includes("DELHI")}
+            value="Delhi"
+            checked={state.includes("Delhi")}
             onChange={handleFilterCheckbox}
           />
-          <label>DELHI</label>
+          <label>Delhi</label>
         </div>
         <div>
           <input
             type="checkbox"
-            value="Maharatra"
-            checked={state.includes("Maharatra")}
+            value="Maharashtra"
+            checked={state.includes("Maharashtra")}
             onChange={handleFilterCheckbox}
           />
-          <label>Maharatra</label>
+          <label>Maharashtra</label>
         </div>
       </div>
+
+
+
+      <h3>Filter By Brand</h3>
+      <div>
+        <div>
+          <input
+            type="checkbox"
+            value="OPPO"
+            checked={brand.includes("OPPO")}
+            onChange={handleBrandFilterCheckbox}
+          />
+          <label>OPPO</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            value="Motorola"
+            checked={brand.includes("Motorola")}
+            onChange={handleBrandFilterCheckbox}
+          />
+          <label>Motorola</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            value="Realme"
+            checked={brand.includes("Realme")}
+            onChange={handleBrandFilterCheckbox}
+          />
+          <label>Realme</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            value="Samsung"
+            checked={brand.includes("Samsung")}
+            onChange={handleBrandFilterCheckbox}
+          />
+          <label>Samsung</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            value="iQOO"
+            checked={brand.includes("iQOO")}
+            onChange={handleBrandFilterCheckbox}
+          />
+          <label>iQOO</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            value="Xiaomi"
+            checked={brand.includes("Xiaomi")}
+            onChange={handleBrandFilterCheckbox}
+          />
+          <label>Xiaomi</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            value="OnePlus"
+            checked={brand.includes("OnePlus")}
+            onChange={handleBrandFilterCheckbox}
+          />
+          <label>OnePlus</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            value="Redmi"
+            checked={brand.includes("Redmi")}
+            onChange={handleBrandFilterCheckbox}
+          />
+          <label>Redmi</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            value="Apple"
+            checked={brand.includes("Apple")}
+            onChange={handleBrandFilterCheckbox}
+          />
+          <label>Apple</label>
+        </div>
+      </div>
+
+
 
       <h3>Sort by Price</h3>
       <div onChange={handleSort}>

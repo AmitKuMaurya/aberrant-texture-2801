@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import SingleMobile from "../Pages/SingleMobile";
-import { getMobiles } from "../Redux/app/action";
+import { getMobiles } from "../Redux/Mobile/action";
 import MobileCard from "./MobileCard";
 import styled from "styled-components";
 import { useLocation, useSearchParams } from "react-router-dom";
 
 const MobileList = () => {
-  const mobiles = useSelector((state) => state.AppReducer.mobiles);
+  const mobiles = useSelector((state) => state.MobileReducer.mobiles);
   const [searchParams] =useSearchParams()
   const dispatch = useDispatch();
   const location = useLocation();
@@ -20,6 +19,7 @@ const MobileList = () => {
                 state: searchParams.getAll('state'),
                 _sort: sortBy && 'price',
                 _order: sortBy,
+                brand: searchParams.getAll('brand')
             },
         };
          console.log(getMobilesParams)
