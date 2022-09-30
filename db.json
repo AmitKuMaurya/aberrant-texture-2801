@@ -16,7 +16,8 @@
       "image":"https://imageio.forbes.com/specials-images/imageserve/5f962df3991e5636a2f68758/0x0.jpg?format=jpg&crop=812,457,x89,y103,safe&width=1200",
       "state":"Madhay Pradesh",
       "city":"Indore",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 2,
@@ -32,7 +33,8 @@
       "image":"https://apollo-singapore.akamaized.net/v1/files/ew30wx46crdo1-IN/image;s=780x0;q=60",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 3,
@@ -46,9 +48,10 @@
       "description": "This is a used Maruti Suzuki Eeco 5 STR AC CNG 2016 Car model with Petrol + CNG variant. It is a Van Car The specifications of the Car include engine displacement 1196 CC , fuel efficiency level 16.20 Kmpl , fuel tank capacity of 40 litres, maximum power of 63bhp@6000rpm , maximum torque of 83Nm@3000rpm and transmission is Manual",
       "price":40000,
       "image":"https://ic1.maxabout.us/autos/cars_india//M/2014/9/maruti-eeco-smiles.jpg",
-      "state":"",
-      "city":"",
-      "name":""
+      "state":"Uttar Pradesh",
+      "city":"Varanasi",
+      "name":"",
+      "country": "India"
     },
     {
       "id": 4,
@@ -64,7 +67,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Avinya/9002/1651226696105/side-view-(left)-90.jpg?tr=w-456",
       "state":"Maharatra",
       "city":"Pune",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 5,
@@ -80,7 +84,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Rolls-Royce/Rolls-Royce-Phantom/7783/1587206758888/front-left-side-47.jpg?tr=w-456",
       "state":"Uttar Pradesh",
       "city":"Varanasi",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 6,
@@ -96,7 +101,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Curvv/8935/1649232130840/front-left-side-47.jpg?tr=w-456",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 7,
@@ -112,7 +118,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Sierra/7515/1580884714331/front-left-side-47.jpg?tr=w-456",
       "state":"Uttar Pradesh",
       "city":"Varanasi",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 8,
@@ -128,7 +135,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Altroz-EV/6844/1580964914459/front-left-side-47.jpg?tr=w-456",
       "state":"Uttar Pradesh",
       "city":"Lucknow",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 9,
@@ -144,7 +152,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon-EV-Max/9149/1655466205208/front-left-side-47.jpg?tr=w-456",
       "state":"Madhay Pradesh",
       "city":"Bhopal",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 10,
@@ -160,7 +169,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon-EV-Prime/7042/1658217086733/front-left-side-47.jpg?tr=w-456",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 11,
@@ -176,7 +186,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Tigor-EV/8574/1630405193652/front-left-side-47.jpg?tr=w-456",
       "state":"Karnatak",
       "city":"Banglore",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 12,
@@ -192,7 +203,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Tiago-EV/6279/1664358111707/front-left-side-47.jpg?tr=w-456",
       "state":"Bihar",
       "city":"Patna",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 13,
@@ -208,7 +220,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Yodha-Pickup/7624/1609147376028/front-left-side-47.jpg?tr=w-456",
       "state":"west Bengal",
       "city":"Kolkata",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 14,
@@ -224,7 +237,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Tiago-NRG/9244/1659513154002/front-left-side-47.jpg?tr=w-456",
       "state":"Maharatra",
       "city":"Pune",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 15,
@@ -240,7 +254,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Tigor/7339/1579858414566/front-left-side-47.jpg?tr=w-456",
       "state":"Uttar Pradesh",
       "city":"Lucknow",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 16,
@@ -256,7 +271,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/New-Safari/6845/1645420318264/front-left-side-47.jpg?tr=w-456",
       "state":"Madhay Pradesh",
       "city":"Indore",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 17,
@@ -272,7 +288,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Altroz/8277/1648014589351/front-left-side-47.jpg?tr=w-456",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 18,
@@ -288,7 +305,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Tiago/7338/Tata-Tiago-XE/1660901953609/front-left-side-47.jpg?tr=w-456",
       "state":"Maharatra",
       "city":"Mumbai",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 19,
@@ -304,7 +322,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Harrier/7503/1608617769033/front-left-side-47.jpg?tr=w-456",
       "state":"Karnatak",
       "city":"Banglore",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 20,
@@ -320,7 +339,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Punch/7513/1633329515070/front-left-side-47.jpg?tr=w-456",
       "state":"Karnatak",
       "city":"Banglore",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 21,
@@ -336,7 +356,8 @@
       "image":"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Nexon/7384/1614326304397/front-left-side-47.jpg?impolicy=resize&imwidth=480",
       "state":"Madhay Pradesh",
       "city":"Bhopal",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 22,
@@ -352,7 +373,8 @@
       "image":"https://www.hondacarindia.com/Content/desktop/images/models/new-jazz.png",
       "state":"Karnatak",
       "city":"Banglore",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 23,
@@ -368,7 +390,8 @@
       "image":"https://www.hondacarindia.com/Content/desktop/images/models/wrv.png",
       "state":"Karnatak",
       "city":"Banglore",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 24,
@@ -384,7 +407,8 @@
       "image":"https://www.hondacarindia.com/Content/desktop/images/models/city-ehev.png",
       "state":"Maharatra",
       "city":"Mumbai",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 25,
@@ -400,7 +424,8 @@
       "image":"https://www.hondacarindia.com/Content/desktop/images/models/all-new-city.jpg",
       "state":"Maharatra",
       "city":"Mumbai",
-      "name":""
+      "name":"",
+      "country": "India"
     }
   ],
   "bikes": [
@@ -649,7 +674,9 @@
       "image":"https://m.media-amazon.com/images/I/71geVdy6-OS._SX466_.jpg",
       "state":"Madhya Pradesh",
       "city":"Bhopal",
-      "name":"Abhinav"
+      "name":"Abhinav",
+      "country": "India",
+      "area": "Lalghati"
     },
     {
       "id": 2,
@@ -660,7 +687,9 @@
       "image":"https://www.reliancedigital.in/medias/Motorola-E32-Mobile-Phone-492849904-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wyNDU4OHxpbWFnZS9qcGVnfGltYWdlcy9oODAvaDI1Lzk4MzQxMDkyMDY1NTguanBnfGU1NGNkMTA3ODhiYTJhZGEyNDFhMGEzZDZhNjg5NzhmZWYzM2JkNDY4NjY3MzhiZTA3MzRmM2U4OGUzMmU4Y2Q",
       "state":"Madhya Pradesh",
       "city":"Bhopal",
-      "name":"Shubham"
+      "name":"Shubham",
+      "country": "India",
+      "area": "Lalghati"
     },
     {
       "id": 3,
@@ -671,7 +700,8 @@
       "image":"https://cdn1.smartprix.com/rx-iEfM9LzwK-w1200-h1200/EfM9LzwK.jpg",
       "state":"Madhay Pradesh",
       "city":"Indore",
-      "name":"jkjkjkhikhik"
+      "name":"jkjkjkhikhik",
+      "country": "India"
     },
     {
       "id": 4,
@@ -682,7 +712,8 @@
       "image":"https://m.media-amazon.com/images/I/81vDZyJQ-4L._SL1500_.jpg",
       "state":"Madhay Pradesh",
       "city":"Indore",
-      "name":"Abhinav"
+      "name":"Abhinav",
+      "country": "India"
     },
     {
       "id": 5,
@@ -693,7 +724,9 @@
       "image":"https://m.media-amazon.com/images/I/81vDZyJQ-4L._SL1500_.jpg",
       "state":"Madhay Pradesh",
       "city":"Bhopal",
-      "name":"suresh"
+      "name":"suresh",
+      "country": "India",
+      "area": "Lalghati"
     },
     {
       "id": 6,
@@ -704,7 +737,8 @@
       "image":"https://m.media-amazon.com/images/I/71PvHfU+pwL._SL1500_.jpg",
       "state":"Karnatak",
       "city":"Banglore",
-      "name":"Sakti Priya"
+      "name":"Sakti Priya",
+      "country": "India"
     },
     {
       "id": 7,
@@ -715,7 +749,8 @@
       "image":"https://m.media-amazon.com/images/I/61VbKHdE0rL._SL1200_.jpg",
       "state":"Karnatak",
       "city":"Banglore",
-      "name":"sunil"
+      "name":"sunil",
+      "country": "India"
     },
     {
       "id": 8,
@@ -726,7 +761,9 @@
       "image":"https://m.media-amazon.com/images/I/51yBIP6Q87L._SL1200_.jpg",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":"Jetha Lal"
+      "name":"Jetha Lal",
+      "country": "India",
+      "area": "MAYUR VIHAR EXTENSION"
     },
     {
       "id": 9,
@@ -737,7 +774,9 @@
       "image":"https://m.media-amazon.com/images/I/71WS-0ITj7L._SL1200_.jpg",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India",
+      "area": "MAYUR VIHAR EXTENSION"
     },
     {
       "id": 10,
@@ -746,9 +785,11 @@
       "description": "iQOO Z6 Pro 5G display provides immersive visual experience with true color contrast and a peak brightness of 1300 nits. HDR10+ helps in providing right color tone mapping for each scene. The display offers 90Hz refersh rate and 180Hz Touch Sampling Rate for a smooth touch response.",
       "price": 21999,
       "image":"https://m.media-amazon.com/images/I/61E4zA32FrL._SL1200_.jpg",
-      "state":"Uttar Pradesh",
+      "state":"DELHI",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India",
+      "area": "OKHLA"
     },
     {
       "id": 11,
@@ -759,7 +800,9 @@
       "image":"https://m.media-amazon.com/images/I/71joAQ6oEWL._SL1500_.jpg",
       "state":"Maharatra",
       "city":"Mumbai",
-      "name":""
+      "name":"",
+      "country": "India",
+      "area": "CHEMBUR"
     },
     {
       "id": 12,
@@ -770,7 +813,9 @@
       "image":"https://m.media-amazon.com/images/I/81zLNgcvlaL._SL1500_.jpg",
       "state":"Maharatra",
       "city":"Mumbai",
-      "name":""
+      "name":"",
+      "country": "India",
+      "area": "CHEMBUR"
     },
     {
       "id": 13,
@@ -781,7 +826,8 @@
       "image":"https://m.media-amazon.com/images/I/71V--WZVUIL._SL1500_.jpg",
       "state":"Madhay Pradesh",
       "city":"Indore",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 14,
@@ -790,9 +836,11 @@
       "description": "MediaTek Helio G85 Octa-core Processor 4 GB RAM | 64 GB ROM | Expandable Upto 256 GB 16.51 cm (6.5 inch) HD+ Display 50MP+2MP+2MP Primary Camera | 8MP Front Camera 6000 mAh Battery",
       "price":40000,
       "image":"https://m.media-amazon.com/images/I/81W+d4FqbGL._SL1500_.jpg",
-      "state":"Uttar Pradesh",
+      "state":"DELHI",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India",
+      "area": "OKHLA"
     },
     {
       "id": 15,
@@ -803,7 +851,9 @@
       "image":"https://m.media-amazon.com/images/I/81BxHYjeA2L._SL1500_.jpg",
       "state":"Maharatra",
       "city":"Mumbai",
-      "name":""
+      "name":"",
+      "country": "India",
+      "area": "KURLA WEST"
     },
     {
       "id": 16,
@@ -814,7 +864,8 @@
       "image":"https://m.media-amazon.com/images/I/71ZOtNdaZCL._SL1500_.jpg",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 17,
@@ -825,7 +876,8 @@
       "image":"https://m.media-amazon.com/images/I/71WS-0ITj7L._SL1200_.jpg",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 18,
@@ -836,7 +888,8 @@
       "image":"https://m.media-amazon.com/images/I/61E4zA32FrL._SL1200_.jpg",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 19,
@@ -847,7 +900,9 @@
       "image":"https://m.media-amazon.com/images/I/71joAQ6oEWL._SL1500_.jpg",
       "state":"Maharatra",
       "city":"Mumbai",
-      "name":""
+      "name":"",
+      "country": "India",
+      "area": "KURLA WEST"
     },
     {
       "id": 20,
@@ -858,7 +913,9 @@
       "image":"https://m.media-amazon.com/images/I/81vDZyJQ-4L._SL1500_.jpg",
       "state":"Madhay Pradesh",
       "city":"Bhopal",
-      "name":"suresh"
+      "name":"suresh",
+      "country": "India",
+      "area": "Lalghati"
     },
     {
       "id": 21,
@@ -869,7 +926,8 @@
       "image":"https://m.media-amazon.com/images/I/71PvHfU+pwL._SL1500_.jpg",
       "state":"Karnatak",
       "city":"Banglore",
-      "name":"Sakti Priya"
+      "name":"Sakti Priya",
+      "country": "India"
     },
     {
       "id": 22,
@@ -880,7 +938,8 @@
       "image":"https://m.media-amazon.com/images/I/61VbKHdE0rL._SL1200_.jpg",
       "state":"Karnatak",
       "city":"Banglore",
-      "name":"sunil"
+      "name":"sunil",
+      "country": "India"
     },
     {
       "id": 23,
@@ -891,7 +950,8 @@
       "image":"https://m.media-amazon.com/images/I/51yBIP6Q87L._SL1200_.jpg",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":"Jetha Lal"
+      "name":"Jetha Lal",
+      "country": "India"
     },
     {
       "id": 24,
@@ -902,7 +962,8 @@
       "image":"https://m.media-amazon.com/images/I/71WS-0ITj7L._SL1200_.jpg",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India"
     },
     {
       "id": 25,
@@ -913,7 +974,8 @@
       "image":"https://m.media-amazon.com/images/I/61E4zA32FrL._SL1200_.jpg",
       "state":"Uttar Pradesh",
       "city":"Noida",
-      "name":""
+      "name":"",
+      "country": "India"
     }
   ],
   "properties":{
