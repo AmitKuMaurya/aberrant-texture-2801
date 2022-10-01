@@ -3,7 +3,7 @@ import React from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineEye, AiOutlineLike } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, Img } from "@chakra-ui/react";
 
 function AdsCard({
   car,
@@ -82,7 +82,7 @@ function AdsCard({
                 borderBottom: "1px solid grey",
               }}
             >
-              <img width={"7%"} src={image} alt="" />
+              <Img width={"7%"} src={image} alt="" />
               <h4>{title}</h4>
               <p>{price}</p>
               <button
@@ -129,6 +129,7 @@ function AdsCard({
                   style={{
                     padding: "0.5rem 1rem",
                     backgroundColor: "white",
+                    border:"4px solid darkblue",
                     fontWeight: "bold",
                     borderRadius: "0.3rem",
                     cursor: "pointer",
