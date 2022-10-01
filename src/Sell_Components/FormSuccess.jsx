@@ -54,7 +54,7 @@ function FormSuccess() {
                 >
                     Sell Faster Now
                 </button>
-                <Link to={""} >
+                <Link to={"/adslist"} >
                     <button
                         style={{
                             border: "2px solid #002f34",

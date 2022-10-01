@@ -1,10 +1,10 @@
 import {legacy_createStore,applyMiddleware} from "redux";
 
-import {postReducer} from "./reducer";
+import {postReducer as PostReducer} from "./reducer";
 // import {} from "./reducer"
 
 import thunk from "redux-thunk";
 
-const store = legacy_createStore(postReducer,applyMiddleware(thunk));
+const store = legacy_createStore(PostReducer,applyMiddleware(thunk));
 
 export {store}
