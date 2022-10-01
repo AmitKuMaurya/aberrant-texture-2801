@@ -1,0 +1,10 @@
+.yellowLine{
+    border-left: 5px solid #ffce32;
+    padding :0 2rem;
+    height : 60%;
+}
+
+.noYellowLine{
+    padding :0 2rem;
+    height : 60%;
+}
