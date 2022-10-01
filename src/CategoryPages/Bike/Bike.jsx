@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { Box, Container, SimpleGrid, Flex, Image, Text } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
+import { Box, Container, SimpleGrid, Flex, Image, Text, Button } from '@chakra-ui/react'
 import style from "../Mobile/mobile.module.css"
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import BikeFilterComp from '../BikeFilterComp'
@@ -10,11 +10,13 @@ import { getBikes } from '../../Redux/Bikes/action'
 
 export const Bike = () => {
     
-  const bikes = useSelector((state) => state.BikeReducer.bikes);
+  let bikes = useSelector((state) => state.BikeReducer.bikes);
   const [searchParams] =useSearchParams()
   const dispatch = useDispatch();
   const location = useLocation();
-  const navigate = useNavigate()  
+  const navigate = useNavigate();
+  const [length, setLength] = useState(12)
+  bikes = bikes.slice(0,length);
 
   useEffect(() => {
     if (location || bikes.length === 0) {
@@ -29,7 +31,7 @@ export const Bike = () => {
         };
       dispatch(getBikes(getBikesParams));
     }
-  }, [location.search]);
+  }, [location.search, length]);
 
 
     //  console.log(bikes)
@@ -91,11 +93,13 @@ export const Bike = () => {
           </Box>
 
           </Box>
-
-     
-          
         ))}
   </SimpleGrid>
+
+  <Button colorScheme="teal" variant="outline" margin="auto" mt="1rem" onClick={() => setLength(length + 3)}>
+              Load More
+            </Button>
+
    </Box>
   </Flex>
   </>

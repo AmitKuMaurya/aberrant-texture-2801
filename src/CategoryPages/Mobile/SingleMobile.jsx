@@ -27,7 +27,7 @@ export const SingleMobile = () => {
 
 
  const getMobileById = (id) => {
-    return axios(`http://localhost:3004/mobiles/${id}`)
+    return axios(`https://olx-project-api.herokuapp.com/mobiles/${id}`)
   };
 
   useEffect(() => {

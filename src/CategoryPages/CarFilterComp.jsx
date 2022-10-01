@@ -109,92 +109,52 @@ const CarFilterComp = () => {
         <Box>
           <input
             type="checkbox"
-            value="OPPO"
-            checked={brand.includes("OPPO")}
+            value="Hyundai"
+            checked={brand.includes("Hyundai")}
             onChange={handleBrandFilterCheckbox}
             style={{marginRight : "5px"}}
           />
-          <label>OPPO</label>
+          <label>Hyundai</label>
         </Box>
         <Box>
           <input
             type="checkbox"
-            value="Motorola"
-            checked={brand.includes("Motorola")}
+            value="Maruti Suzuki"
+            checked={brand.includes("Maruti Suzuki")}
             onChange={handleBrandFilterCheckbox}
             style={{marginRight : "5px"}}
           />
-          <label>Motorola</label>
+          <label>Maruti Suzuki</label>
         </Box>
         <Box>
           <input
             type="checkbox"
-            value="Realme"
-            checked={brand.includes("Realme")}
+            value="Tata"
+            checked={brand.includes("Tata")}
             onChange={handleBrandFilterCheckbox}
             style={{marginRight : "5px"}}
           />
-          <label>Realme</label>
+          <label>Tata</label>
         </Box>
         <Box>
           <input
             type="checkbox"
-            value="Samsung"
-            checked={brand.includes("Samsung")}
+            value="Rolls-Royce"
+            checked={brand.includes("Rolls-Royce")}
             onChange={handleBrandFilterCheckbox}
             style={{marginRight : "5px"}}
           />
-          <label>Samsung</label>
+          <label>Rolls-Royce</label>
         </Box>
         <Box>
           <input
             type="checkbox"
-            value="iQOO"
-            checked={brand.includes("iQOO")}
+            value="Honda"
+            checked={brand.includes("Honda")}
             onChange={handleBrandFilterCheckbox}
             style={{marginRight : "5px"}}
           />
-          <label>iQOO</label>
-        </Box>
-        <Box>
-          <input
-            type="checkbox"
-            value="Xiaomi"
-            checked={brand.includes("Xiaomi")}
-            onChange={handleBrandFilterCheckbox}
-            style={{marginRight : "5px"}}
-          />
-          <label>Xiaomi</label>
-        </Box>
-        <Box>
-          <input
-            type="checkbox"
-            value="OnePlus"
-            checked={brand.includes("OnePlus")}
-            onChange={handleBrandFilterCheckbox}
-            style={{marginRight : "5px"}}
-          />
-          <label>OnePlus</label>
-        </Box>
-        <Box>
-          <input
-            type="checkbox"
-            value="Redmi"
-            checked={brand.includes("Redmi")}
-            onChange={handleBrandFilterCheckbox}
-            style={{marginRight : "5px"}}
-          />
-          <label>Redmi</label>
-        </Box>
-        <Box>
-          <input
-            type="checkbox"
-            value="Apple"
-            checked={brand.includes("Apple")}
-            onChange={handleBrandFilterCheckbox}
-            style={{marginRight : "5px"}}
-          />
-          <label>Apple</label>
+          <label>Honda</label>
         </Box>
       </Box>
 

@@ -27,7 +27,7 @@ export const SingleCar = () => {
 
 
  const getCarById = (id) => {
-    return axios(`http://localhost:3004/cars/${id}`)
+    return axios(`https://olx-project-api.herokuapp.com/cars/${id}`)
   };
 
   useEffect(() => {

@@ -1,7 +1,6 @@
 
 import './App.css';
-import { Car } from './CategoryPages/Car/Car';
-import { AllRoutes } from './Routes/AllRoutes';
+import { MainRoutes } from './Routes/MainRoutes';
 import { Navbar } from './Routes/Navbar';
 
 
@@ -11,7 +10,7 @@ function App() {
     <div className="App">
        
        <Navbar/>
-       <AllRoutes/>
+       <MainRoutes/>
 
     </div>
   );

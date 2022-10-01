@@ -8,7 +8,7 @@ import { SingleMobile } from "../CategoryPages/Mobile/SingleMobile"
 
 
 
-export const AllRoutes = () => {
+export const MainRoutes = () => {
     return (
       <Routes>
         <Route path="/cars" element={<Car/>} />

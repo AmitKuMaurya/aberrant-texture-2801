@@ -27,7 +27,7 @@ export const SingleBike = () => {
 
 
  const getBikeById = (id) => {
-    return axios(`http://localhost:3004/bikes/${id}`)
+    return axios(`https://olx-project-api.herokuapp.com/bikes/${id}`)
   };
 
   useEffect(() => {
