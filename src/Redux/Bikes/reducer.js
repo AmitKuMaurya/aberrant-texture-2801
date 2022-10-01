@@ -1,7 +1,7 @@
 import * as types from "./actionTypes";
 
 const initialState = {
-  mobiles: [],
+  bikes: [],
   isLoading: false,
   isError: false,
 };
@@ -10,23 +10,23 @@ const reducer = (oldState = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
 
-    case types.GET_MOBILES_REQUEST:
+    case types.GET_BIKES_REQUEST:
         return {
             ...oldState,
             isLoading: true
         }
-        case types.GET_MOBILES_SUCCESS:
+        case types.GET_BIKES_SUCCESS:
             return {
                 ...oldState,
                 isLoading: false,
-                mobiles: payload,
+                bikes: payload,
                 isError: false
             }
-            case types.GET_MOBILES_FAILURE:
+            case types.GET_BIKES_FAILURE:
                 return {
                     ...oldState,
                     isLoading: false,
-                    mobiles: [],
+                    bikes: [],
                     isError: true
 
                 }

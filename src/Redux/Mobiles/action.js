@@ -2,10 +2,10 @@ import axios from "axios";
 import * as types from "./actionTypes";
 
 
-const getMobiles = (params) => (dispatch) => {
+export const getMobiles = (params) => (dispatch) => {
   dispatch({ type: types.GET_MOBILES_REQUEST });
   return axios
-    .get("http://localhost:8080/mobiles", params)
+    .get("https://olx-project-api.herokuapp.com/mobiles", params)
     .then((r) => {
       dispatch({ type: types.GET_MOBILES_SUCCESS, payload: r.data });
     })
@@ -13,5 +13,3 @@ const getMobiles = (params) => (dispatch) => {
       dispatch({ type: types.GET_MOBILES_FAILURE, payload: e });
     });
 };
-
-export { getMobiles };
