@@ -902,6 +902,28 @@
       "state":"Uttar Pradesh",
       "city":"Noida",
       "name":"",  "date" : "Feb 11"
+    },
+    {
+      "id": 26,
+      "brand": "Xiaomi",
+      "title":"Xiaomi Redmi 10 Prime 2022",
+      "description": "Display: 6.5 inch FHD+ (2400x1080) Dot display with 90Hz high refresh rate and adaptive refresh rate technology; ; 180Hz touch sampling,",
+      "price": 9999,
+      "image":"https://m.media-amazon.com/images/I/71joAQ6oEWL._SL1500_.jpg",
+      "state":"Delhi",
+      "city":"Noida",
+      "name":"",  "date" : "Jan 12"
+    },
+    {
+      "id": 27,
+      "brand": "Xiaomi",
+      "title":"Redmi Note 11 (Horizon Blue)",
+      "description": "Alexa Hands-Free capable: Download the Alexa app to use Alexa hands-free. Play music, make calls, hear news, open apps, navigate, and more, all using just your voice, while on-the-go Memory, Storage & SIM: 4GB RAM | 64GB UFS 2.2 storage expandable up to 512GB with dedicated SD card slot | Dual SIM (nano+nano) dual standby (4G+4G)",
+      "price": 12099,
+      "image":"https://m.media-amazon.com/images/I/81zLNgcvlaL._SL1500_.jpg",
+      "state":"Delhi",
+      "city":"Noida",
+      "name":"",  "date" : "Jan 19"
     }
   ],
   "properties":{
