@@ -39,7 +39,7 @@ const fetchData = (query) => {
   axios("");
 };
 
-const Navbar = () => {
+export const Navbar = () => {
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -184,13 +184,13 @@ const Navbar = () => {
           )}
         </Menu>
 
-        <Link to="#" className="navmenu">
+        <Link to="/cars" className="navmenu">
           Cars
         </Link>
-        <Link to="#" className="navmenu">
+        <Link to="/bikes" className="navmenu">
           Motorcycles
         </Link>
-        <Link to="#" className="navmenu">
+        <Link to="/mobiles" className="navmenu">
           Mobile Phones
         </Link>
         <Link to="#" className="navmenu">

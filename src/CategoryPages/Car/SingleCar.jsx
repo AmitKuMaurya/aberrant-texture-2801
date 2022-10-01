@@ -48,7 +48,7 @@ export const SingleCar = () => {
     <>
       <Grid
         // gridAutoRows = 'minmax(100px, auto)'
-        height="100px"
+        // height="1500px"
         templateRows='repeat(300px, 1fr)'
         templateColumns='repeat(5, 1fr)'
         gap={5}  margin="auto" width='80%'

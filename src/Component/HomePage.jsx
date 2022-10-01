@@ -11,14 +11,18 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import banner from "../Image/banner.png";
-const HomePage = () => {
+import Navbar from "./Navbar";
+
+export const HomePage = () => {
   const [product, setProduct] = useState([]);
   const [mobiles, setMobiles] = useState([]);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     axios
-      .get("https://pratappura-server.herokuapp.com/cars", {
+      .get("https://olx-project-api.herokuapp.com/cars", {
         params: {
           _limit: 10,
         },
@@ -33,7 +37,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get("https://pratappura-server.herokuapp.com/mobiles", {
+      .get("https://olx-project-api.herokuapp.com/mobiles", {
         params: {
           _limit: 10,
         },
@@ -64,6 +68,7 @@ const HomePage = () => {
                 h="300px"
                 borderRadius="10px"
                 cursor="pointer"
+                onClick={() => navigate(`/cars/${item.id}`)}
               >
                 <Img
                   src={item.image}
@@ -103,6 +108,7 @@ const HomePage = () => {
                 borderRadius="10px"
                 align="center"
                 cursor="pointer"
+                onClick={() => navigate(`/mobiles/${item.id}`)}
               >
                 <Img
                   src={item.image}
