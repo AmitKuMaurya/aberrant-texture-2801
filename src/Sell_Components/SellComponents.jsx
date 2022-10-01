@@ -78,12 +78,12 @@ const categorylist = [
 function SellComponents() {
   return (
     <>
-        <Heading >
+        <Heading as='h4' size='lg' textAlign="center" marginTop="2rem" marginBottom="2rem">
         POST YOUR AD
       </Heading>
-    <SimpleGrid margin={"auto"} border={"1px solid #ebeaea"} >
+    <SimpleGrid margin={"auto"} maxW={"50%"} border={"1px solid #ebeaea"} >
 
-        <Heading style={{marginLeft:"1.5rem"}} as={"h4"} textAlign={"left"}>CHOOSE A CATEGORY</Heading>
+        <Heading style={{marginLeft:"1.5rem"}} as='h4' size='md' textAlign="left" marginTop="1rem" marginBottom="1rem" >CHOOSE A CATEGORY</Heading>
       {categorylist.map((item) => (
           <Box key={item.id}>
           <Stack style={{display:"flex"}} border={"1px solid #ebeaea"}>
@@ -93,7 +93,7 @@ function SellComponents() {
             <span style={{marginRight:"1rem",marginLeft:"0.5rem"}}>
             {item.icon}
             </span>
-            <Link to={"/sellpost/postform"} style={{textDecoration:"none", color:"grey"}} ><Text textAlign={"left"} >{item.title}</Text></Link>
+            <Link to={"/sellpost/postform"} style={{textDecoration:"none", color:"grey"}} ><Text textAlign={"left"} marginTop="0.3rem" marginBottom="0.3rem" fontSize={"xl"} >{item.title}</Text></Link>
            </Box>
             
             <Box style={{display:"flex", alignItems:"center",justifyContent:'flex-end'}} >

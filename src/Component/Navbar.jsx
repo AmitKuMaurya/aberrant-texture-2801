@@ -182,6 +182,7 @@ export const Navbar = () => {
                 </>
               )}
 
+              <Link to={"/sellpost"}>
               <Button
                 _hover={{ bgColor: "white" }}
                 bgColor="white"
@@ -191,6 +192,7 @@ export const Navbar = () => {
                 <SellButtonPlus />
                 Sell
               </Button>
+              </Link>
             </HStack>
           </GridItem>
         </Grid>

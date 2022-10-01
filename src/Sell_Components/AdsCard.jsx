@@ -3,6 +3,7 @@ import React from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineEye, AiOutlineLike } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { Box, Button } from "@chakra-ui/react";
 
 function AdsCard({
   car,
@@ -28,7 +29,8 @@ function AdsCard({
 
   return (
     <>
-      <div
+    
+      <Box
         key={id}
         style={{
           boxShadow:
@@ -43,7 +45,7 @@ function AdsCard({
           // backgroundColor: "white",
         }}
       >
-        <div
+        <Box
           style={{
             backgroundColor: "#ebeeef",
             borderLeft: "0.1rem solid skyblue",
@@ -58,13 +60,13 @@ function AdsCard({
           >
             From : {a}/{b}/{c}
           </p>
-        </div>
+        </Box>
 
         <Link
           style={{ textDecoration: "none", color: "black" }}
           to={`/adslist/${id}`}
         >
-          <div
+          <Box
             style={{
               display: "flex",
               flexDirection: "column",
@@ -72,7 +74,7 @@ function AdsCard({
               cursor: "pointer",
             }}
           >
-            <div
+            <Box
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -98,8 +100,8 @@ function AdsCard({
                 style={{ marginTop: "-1.3rem" }}
                 fontSize={"1.5rem"}
               />
-            </div>
-            <div
+            </Box>
+            <Box
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -107,7 +109,7 @@ function AdsCard({
                 padding: "0.2rem 0.4rem",
               }}
             >
-              <div
+              <Box
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -121,9 +123,9 @@ function AdsCard({
                 <p>
                   | <AiOutlineLike />: Likes {math}
                 </p>
-              </div>
-              <div>
-                <button
+              </Box>
+              <Box>
+                <Button
                   style={{
                     padding: "0.5rem 1rem",
                     backgroundColor: "white",
@@ -133,12 +135,12 @@ function AdsCard({
                   }}
                 >
                   Sell faster now
-                </button>
-              </div>
-            </div>
-          </div>
+                </Button>
+              </Box>
+            </Box>
+          </Box>
         </Link>
-      </div>
+      </Box>
     </>
   );
 }
