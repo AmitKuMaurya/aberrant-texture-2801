@@ -33,7 +33,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Footer } from "./Footer";
 import AllCategories from "./AllCategories";
-import { Login } from "./Login";
+import { Login } from "./loginnew";
 
 const fetchData = (query) => {
   axios("");
