@@ -81,19 +81,19 @@ function SellComponents() {
         <Heading >
         POST YOUR AD
       </Heading>
-    <SimpleGrid maxWidth={"60%"} margin={"auto"} border={"1px solid #ebeaea"} >
+    <SimpleGrid margin={"auto"} border={"1px solid #ebeaea"} >
 
         <Heading style={{marginLeft:"1.5rem"}} as={"h4"} textAlign={"left"}>CHOOSE A CATEGORY</Heading>
       {categorylist.map((item) => (
           <Box key={item.id}>
-          <Stack style={{display:"flex"}} border={"1px solid #ebeaea"} maxW={"40%"}>
+          <Stack style={{display:"flex"}} border={"1px solid #ebeaea"}>
            <Box style={{display:"flex", alignItems:"center",justifyContent:"space-between"}}>
 
            <Box style={{display:"flex", alignItems:"center",justifyContent:'flex-start'}} >
             <span style={{marginRight:"1rem",marginLeft:"0.5rem"}}>
             {item.icon}
             </span>
-            <Link to={"/sellpost/postform"} style={{textDecoration:"none", color:"grey"}} ><Text maxW={"15rem"} textAlign={"left"} >{item.title}</Text></Link>
+            <Link to={"/sellpost/postform"} style={{textDecoration:"none", color:"grey"}} ><Text textAlign={"left"} >{item.title}</Text></Link>
            </Box>
             
             <Box style={{display:"flex", alignItems:"center",justifyContent:'flex-end'}} >

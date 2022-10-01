@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Select, Button, Text, Input } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -47,10 +47,10 @@ function SellFormComponent() {
         <Box textAlign={"left"}>
           <Heading as={"h3"}>INCLUDE SOME DETAILS</Heading>
           <form >
-            <div>
+            <Box>
               <label>Cars</label>
               <br />
-              <select value={cars} onChange={(e) =>setCars(e.target.value)} required>
+              <Select value={cars} onChange={(e) =>setCars(e.target.value)} required>
                 <option value=""></option>
                 <optgroup label="Popular Brand"></optgroup>
                 <option value="maruti-suzuki">Maruti Suzuki</option>
@@ -127,55 +127,55 @@ function SellFormComponent() {
                 <option value="toyota">Toyota</option>
                 <option value="volkswagen">Volkswagen</option>
                 <option value="volvo">Volvo</option>
-              </select>
-            </div>
+              </Select>
+            </Box>
 
-            <div>
+            <Box>
               <label>Year</label>
               <br />
-              <input value={year} onChange={(e) =>setYear(e.target.value)} type="number" />
-            </div>
+              <Input value={year} onChange={(e) =>setYear(e.target.value)} type="number" />
+            </Box>
 
-            <div>
+            <Box>
               <label>Fuel</label>
               <br />
-              <button  >CNG & Hybrids</button>
-              <button >Diesel</button>
-              <button  >Electric</button>
-              <button  >LPG</button>
-              <button  >Petrol</button>
-            </div>
+              <Button  >CNG & Hybrids</Button>
+              <Button >Diesel</Button>
+              <Button  >Electric</Button>
+              <Button  >LPG</Button>
+              <Button  >Petrol</Button>
+            </Box>
 
-            <div>
+            <Box>
               <label>Transmission</label>
               <br />
-              <button >Automatic</button>
-              <button>Manual</button>
-            </div>
+              <Button >Automatic</Button>
+              <Button>Manual</Button>
+            </Box>
 
-            <div>
+            <Box>
               <label>KM driven</label>
-              <input value={kmDriven} onChange={(e) =>setKMDriven(e.target.value)} type="number" />
-            </div>
-            <div>
+              <Input value={kmDriven} onChange={(e) =>setKMDriven(e.target.value)} type="number" />
+            </Box>
+            <Box>
               <label>No. of Owners</label>
               <br />
-              <button>1st</button>
-              <button>2nd</button>
-              <button>3rd</button>
-              <button>4+</button>
-            </div>
+              <Button>1st</Button>
+              <Button>2nd</Button>
+              <Button>3rd</Button>
+              <Button>4+</Button>
+            </Box>
 
-            <div>
+            <Box>
               <label>Ad title</label>
               <br />
-              <input value={title} onChange={(e) =>setTitle(e.target.value)}
+              <Input value={title} onChange={(e) =>setTitle(e.target.value)}
                 placeholder="Mention the key features of your item (e.g. brand, model, age, type)"
                 type="text"
               />
-            </div>
+            </Box>
 
-            <div>
+            <Box>
               <label>Description</label>
               <br />
               <textarea
@@ -184,28 +184,28 @@ function SellFormComponent() {
                 cols="30"
                 rows="10"
               ></textarea>
-            </div>
+            </Box>
 
-            <div>
-              <h3>SET A PRICE</h3>
+            <Box>
+              <Text fontSize="2xl" fontWeight="bold" >SET A PRICE</Text>
               <label>Price</label>
               <br />
-              <input value={price} onChange={(e) =>setPrice(e.target.value)} type="number" />
-            </div>
+              <Input value={price} onChange={(e) =>setPrice(e.target.value)} type="number" />
+            </Box>
 
-            <div>
-              <h3>UPLOAD UP TO 20 PHOTOS</h3>
+            <Box>
+              <Text fontSize="2xl" fontWeight="bold">UPLOAD UP TO 20 PHOTOS</Text>
               <label >Image URL</label>
               <br />
-              <input required type="url" value={image} onChange={(e)=>setImage(e.target.value)}  />
-              {/* <input  type="file" onChange="readURL(this)" accept="Image/*" /> */}
-            </div>
+              <Input required type="url" value={image} onChange={(e)=>setImage(e.target.value)}  />
+              {/* <Input  type="file" onChange="readURL(this)" accept="Image/*" /> */}
+            </Box>
 
-            <div>
-              <h3>CONFIRM YOUR LOCATION</h3>
+            <Box>
+              <Text fontSize="2xl" fontWeight="bold">CONFIRM YOUR LOCATION</Text>
               <label>State</label>
               <br />
-              <select value={location} onChange={(e) =>setLocation(e.target.value)} required >
+              <Select value={location} onChange={(e) =>setLocation(e.target.value)} required >
                 <option ></option>
                 <option >Andaman &amp; Nicobar Islands</option>
                 <option >Andhra Pradesh</option>
@@ -243,18 +243,18 @@ function SellFormComponent() {
                 <option >Uttar Pradesh</option>
                 <option >Uttaranchal</option>
                 <option >West Bengal</option>
-              </select>
-            </div>
+              </Select>
+            </Box>
 
-            <div>
-              <h3>REVIEW YOUR DETAILS</h3>
-              <div style={{display:"flex",justifyContent:"space-between",maxW:"50%"}}>
+            <Box>
+              <Text fontSize="2xl" fontWeight="bold">REVIEW YOUR DETAILS</Text>
+              <Box style={{display:"flex",justifyContent:"space-between",maxW:"50%"}}>
                 <img   height={"30px"} width={"30px"} src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="user logo" />
-                 <input value={userName} onChange={(e) =>setUserName(e.target.value)}  type="text"placeholder="your name" />
-              </div>
-            </div>
+                 <Input value={userName} onChange={(e) =>setUserName(e.target.value)}  type="text"placeholder="your name" />
+              </Box>
+            </Box>
 
-            <button onClick={handlePostReq} type="submit">Post now</button>
+            <Button onClick={handlePostReq} type="submit">Post now</Button>
 
           </form>
         </Box>

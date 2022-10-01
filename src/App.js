@@ -1,10 +1,14 @@
 import React from 'react'
-import MainRoute from './MainRoutes/MainRoute';
+import { Footer } from './Component/Footer';
+import Navbar from './Component/Navbar';
+import { MainRoutes } from './Routes/MainRoutes';
 
 function App() {
   return (
     <>
-    <MainRoute/>
+    <Navbar/>
+    <MainRoutes/>
+    <Footer/>
     </>
   )
 }
