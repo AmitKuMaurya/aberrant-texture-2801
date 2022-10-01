@@ -1,8 +1,14 @@
 import {
   BellIcon,
+  CalendarIcon,
   ChatIcon,
   ChevronDownIcon,
+  CopyIcon,
+  ExternalLinkIcon,
+  PlusSquareIcon,
+  QuestionIcon,
   SearchIcon,
+  SettingsIcon,
 } from "@chakra-ui/icons";
 import {
   Box,
@@ -43,7 +49,7 @@ const fetchData = (query) => {
 };
 
 export const Navbar = () => {
-  const { isAuth } = useContext(AuthContext);
+  const { isAuth, setIsAuth } = useContext(AuthContext);
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -127,6 +133,10 @@ export const Navbar = () => {
           </GridItem>
           <GridItem colSpan={1}>
             <HStack spacing={5} justify="right">
+              <HStack>
+                <Text fontWeight="bold"> English</Text>
+                <ChevronDownIcon />
+              </HStack>
               {isAuth && (
                 <ChatIcon
                   w={5}
@@ -150,23 +160,77 @@ export const Navbar = () => {
                   <MenuButton transition="all 0.2s">
                     <FaUser />
                   </MenuButton>
-                  <MenuList borderRadius={0}>
+                  <MenuList borderRadius={0} w="25vw" h="90vh">
                     <HStack spacing={10} p={2}>
                       <Img src={olxlogo} w="40px" h="30px" />
                       <Box>
                         <Text>Hello,</Text>
-                        <Text>Shantilal Patliya</Text>
+                        <Text>OLX User</Text>
                         <Button color="black" fontWeight="none" variant="link">
                           View And Edit Profile
                         </Button>
                       </Box>
                     </HStack>
+                    <Text px={2} fontWeight="bold">
+                      2 Steps Left
+                    </Text>
+                    <HStack p={5}>
+                      <Box bgColor="yellow" h="10px" w="40px" />
+                      <Box bgColor="yellow" h="10px" w="40px" />
+                      <Box bgColor="yellow" h="10px" w="40px" />
+                      <Box bgColor="yellow" h="10px" w="40px" />
+                      <Box bgColor="gray" h="10px" w="40px" />
+                      <Box bgColor="gray" h="10px" w="40px" />
+                    </HStack>
+                    <Text p={2} align="center">
+                      OLX is built on trust.
+                    </Text>
+                    <MenuDivider />
                     <MenuItem>
-                      <Link to="/adslist">My ADS</Link>
+                      <HStack>
+                        <CopyIcon />
+                        <Link to="/adslist">My ADS</Link>
+                      </HStack>
+                    </MenuItem>
+                    <MenuItem>
+                      <HStack>
+                        <ExternalLinkIcon />
+                        <Link to="/adslist">Buy Business Packages</Link>
+                      </HStack>
+                    </MenuItem>
+                    <MenuItem>
+                      <HStack>
+                        <CalendarIcon />
+                        <Link to="/adslist">Bought Packages & Billing</Link>
+                      </HStack>
                     </MenuItem>
                     <MenuDivider />
-                    <MenuItem>Open...</MenuItem>
-                    <MenuItem>Save File</MenuItem>
+                    <MenuItem>
+                      <HStack>
+                        <QuestionIcon />
+                        <Link to="/adslist">Help</Link>
+                      </HStack>
+                    </MenuItem>
+                    <MenuDivider />
+                    <MenuItem>
+                      <HStack>
+                        <SettingsIcon />
+                        <Link to="/adslist">Settings</Link>
+                      </HStack>
+                    </MenuItem>
+                    <MenuDivider />
+                    <MenuItem>
+                      <HStack>
+                        <FaUser />
+                        <Button
+                          variant="link"
+                          color="black"
+                          onClick={() => setIsAuth(false)}
+                        >
+                          Log Out
+                        </Button>
+                      </HStack>
+                    </MenuItem>
                   </MenuList>
                 </Menu>
               ) : (
