@@ -13,6 +13,7 @@
     "axios": "^0.27.2",
     "firebase": "^9.10.0",
     "framer-motion": "^7.5.1",
+    "hoist-non-react-statics": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
@@ -20,6 +21,7 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "^5.0.1",
     "react-swiper": "^0.1.5",
+    "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
     "swiper": "^8.4.2",
     "web-vitals": "^2.1.4"

@@ -18,14 +18,16 @@ import {
   InputRightElement,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
   Stack,
+  Text,
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import { FaChevronDown, FaChevronUp, FaUser } from "react-icons/fa";
+import React, { useContext, useEffect, useState } from "react";
+import { FaChevronDown, FaChevronUp, FaUser, FaUserAlt } from "react-icons/fa";
 import "./Navbar.css";
 import SellButtonPlus from "./SellButtonPlus";
 import olxlogo from "../Image/olxlogo.png";
@@ -34,12 +36,14 @@ import axios from "axios";
 import { Footer } from "./Footer";
 import AllCategories from "./AllCategories";
 import { Login } from "./loginnew";
+import { AuthContext } from "../Context/AuthContext";
 
 const fetchData = (query) => {
   axios("");
 };
 
 export const Navbar = () => {
+  const { isAuth } = useContext(AuthContext);
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -123,27 +127,61 @@ export const Navbar = () => {
           </GridItem>
           <GridItem colSpan={1}>
             <HStack spacing={5} justify="right">
-              <ChatIcon
-                w={5}
-                h={5}
-                cursor="pointer"
-                _hover={{ color: "teal" }}
-              />
-              <BellIcon
-                w={6}
-                h={6}
-                cursor="pointer"
-                _hover={{ color: "teal" }}
-              />
+              {isAuth && (
+                <ChatIcon
+                  w={5}
+                  h={5}
+                  cursor="pointer"
+                  _hover={{ color: "teal" }}
+                />
+              )}
+              {isAuth && (
+                <BellIcon
+                  w={6}
+                  h={6}
+                  cursor="pointer"
+                  _hover={{ color: "teal" }}
+                />
+              )}
               {/* <Img src="" alt="user image" /> */}
-              <IconButton
-                bgColor="gray.200"
-                icon={<FaUser />}
-                borderRadius="full"
-                _hover={{ color: "teal" }}
-                onClick={onOpen}
-              />
-              <Login onOpen={onOpen} isOpen={isOpen} onClose={onClose} />
+
+              {isAuth ? (
+                <Menu>
+                  <MenuButton transition="all 0.2s">
+                    <FaUser />
+                  </MenuButton>
+                  <MenuList borderRadius={0}>
+                    <HStack spacing={10} p={2}>
+                      <Img src={olxlogo} w="40px" h="30px" />
+                      <Box>
+                        <Text>Hello,</Text>
+                        <Text>Shantilal Patliya</Text>
+                        <Button color="black" fontWeight="none" variant="link">
+                          View And Edit Profile
+                        </Button>
+                      </Box>
+                    </HStack>
+                    <MenuItem>
+                      <Link to="/adslist">My ADS</Link>
+                    </MenuItem>
+                    <MenuDivider />
+                    <MenuItem>Open...</MenuItem>
+                    <MenuItem>Save File</MenuItem>
+                  </MenuList>
+                </Menu>
+              ) : (
+                <>
+                  <IconButton
+                    bgColor="gray.200"
+                    icon={<FaUser />}
+                    borderRadius="full"
+                    _hover={{ color: "teal" }}
+                    onClick={onOpen}
+                  />
+                  <Login onOpen={onOpen} isOpen={isOpen} onClose={onClose} />
+                </>
+              )}
+
               <Button
                 _hover={{ bgColor: "white" }}
                 bgColor="white"
