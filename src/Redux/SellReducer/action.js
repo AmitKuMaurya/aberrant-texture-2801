@@ -5,9 +5,9 @@ const postProduct = (payload) => (dispatch) => {
 
     dispatch({ type: types.POST_REQUEST_FORM });
     return axios.post(`https://dry-forester-heroku.herokuapp.com/posts`, payload).then((res) => {
-        return dispatch({ type: types.POST_SUCCESS_FORM, payload: res.aidDetails })
+        return dispatch({ type: types.POST_SUCCESS_FORM })
     }).catch((err) => {
-        dispatch({ type: types.POST_FAILURE_FORM, payload: err })
+        dispatch({ type: types.POST_FAILURE_FORM })
     })
 }
 
