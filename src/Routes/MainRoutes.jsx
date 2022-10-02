@@ -19,13 +19,13 @@ export const MainRoutes = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/cars" element={<Car />} />
+      <Route path="/adslist" element={<AdsList />} />
+      <Route path="/adslist/:id" element={<SingleAdsItem />} />
       <Route path="/cars/:id" element={<SingleCar />} />
       <Route path="/bikes" element={<Bike />} />
       <Route path="/bikes/:id" element={<SingleBike />} />
       <Route path="/mobiles" element={<Mobile />} />
       <Route path="/mobiles/:id" element={<SingleMobile />} />
-      <Route path="/adslist" element={<AdsList />} />
-      <Route path="/adslist/:id" element={<SingleAdsItem />} />
       <Route
         path={"/sellpost"}
         element={

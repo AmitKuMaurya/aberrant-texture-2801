@@ -1,21 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {Box, Button, Img} from "@chakra-ui/react";
 // import {IoMdCheckmark} from 'react-icons/io';
 function FormSuccess() {
     return (
         <>
-            <navbar>
-                <div style={{ display: "flex", paddingLeft: "2rem", backgroundColor: "#f0f3f3", marginBottom: "1rem" }}>
-                    <img
-                        width={"5%"}
-                        src="https://imgs.search.brave.com/TR8JpzrOhVyxMguU2Oql5H4UMstOR7hVvKSFowTq-IM/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9waXhs/b2suY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIxLzA0L09M/WC1Mb2dvLVBORy5q/cGc"
-                        alt=""
-                    />
-                </div>
-            </navbar>
             {/* <IoMdCheckmark fontSize={"5rem"} /> */}
-            <img
+             
+            <Box margin={"auto"} textAlign={"center"} marginTop={"3rem"} marginBottom={"3rem"}>
+            <Img
                 width={"10%"}
+                style={{margin:"auto"}}
                 src="https://media.npr.org/assets/img/2020/11/24/screenshot-480-_custom-da951372e8aeb5e94c1577fc58ee06c8c4d93698.png"
                 alt="logo-1"
             />
@@ -29,6 +24,7 @@ function FormSuccess() {
             <img
                 src="	https://statics.olx.in/external/base/img/business_multi.webp"
                 alt="logo-2"
+                style={{margin:"auto"}}
             />
 
             <h3>Reach more buyers and sell faster</h3>
@@ -43,19 +39,20 @@ function FormSuccess() {
                     gap: "1rem",
                 }}
             >
-                <button
+                <Button
                     style={{
                         backgroundColor: "#002f34",
                         color: "white",
-                        padding: "1rem 2rem",
+                        padding: "1rem 4rem",
                         fontSize: "18px",
                         borderRadius: "7px",
+                        cursor:"pointer"
                     }}
                 >
                     Sell Faster Now
-                </button>
+                </Button>
                 <Link to={"/adslist"} >
-                    <button
+                    <Button
                         style={{
                             border: "2px solid #002f34",
                             backgroundColor: "white",
@@ -67,9 +64,10 @@ function FormSuccess() {
                         }}
                     >
                         Preview Aid
-                    </button>
+                    </Button>
                 </Link>
             </div>
+            </Box>
         </>
     );
 }

@@ -1,4 +1,4 @@
-import { Box, Heading, SimpleGrid, Select, Button, Text, Input } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Select, Button, Text, Input, Textarea, Img } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -36,21 +36,21 @@ function SellFormComponent() {
 
   return (
     <>
-      <Heading as={"h2"}>POST YOUR AD</Heading>
+      <Heading as="h3" size='lg' textAlign="center">POST YOUR AD</Heading>
 
-      <SimpleGrid maxW={"60%"} margin={"auto"} border={"1px solid red"}>
-        <Box border={"1px solid black"}>
-          <Heading textAlign={"left"} as={"h3"}>
+      <SimpleGrid maxW={"60%"} margin={"auto"} border={"1px solid grey"}>
+        <Box border={"1px solid black"} padding="1rem 1rem" >
+          <Heading textAlign={"left"} as="h4" size="md">
             SELECTED CATEGORY
           </Heading>
         </Box>
-        <Box textAlign={"left"}>
-          <Heading as={"h3"}>INCLUDE SOME DETAILS</Heading>
+        <Box textAlign={"left"} padding="2rem 2rem"  >
+          <Heading as="h4" size="md" marginBottom="1rem">INCLUDE SOME DETAILS</Heading>
           <form >
-            <Box>
-              <label>Cars</label>
+            <Box marginBottom="1rem">
+              <label>Cars*</label>
               <br />
-              <Select value={cars} onChange={(e) =>setCars(e.target.value)} required>
+              <Select value={cars} width="md" onChange={(e) =>setCars(e.target.value)} required>
                 <option value=""></option>
                 <optgroup label="Popular Brand"></optgroup>
                 <option value="maruti-suzuki">Maruti Suzuki</option>
@@ -130,82 +130,84 @@ function SellFormComponent() {
               </Select>
             </Box>
 
-            <Box>
-              <label>Year</label>
+            <Box marginBottom="1rem">
+              <label>Year*</label>
               <br />
-              <Input value={year} onChange={(e) =>setYear(e.target.value)} type="number" />
+              <Input  width="md" value={year} onChange={(e) =>setYear(e.target.value)} type="number" />
             </Box>
 
-            <Box>
-              <label>Fuel</label>
+            <Box marginBottom="1rem">
+              <label>Fuel*</label>
               <br />
-              <Button  >CNG & Hybrids</Button>
-              <Button >Diesel</Button>
-              <Button  >Electric</Button>
-              <Button  >LPG</Button>
-              <Button  >Petrol</Button>
+              <Button marginLeft="1rem" >CNG & Hybrids</Button>
+              <Button marginLeft="1rem" >Diesel</Button>
+              <Button marginLeft="1rem" >Electric</Button>
+              <Button marginLeft="1rem" >LPG</Button>
+              <Button marginLeft="1rem" >Petrol</Button>
             </Box>
 
-            <Box>
-              <label>Transmission</label>
+            <Box  marginBottom="1rem">
+              <label>Transmission*</label>
               <br />
-              <Button >Automatic</Button>
-              <Button>Manual</Button>
+              <Button marginLeft="1rem" >Automatic</Button>
+              <Button marginLeft="1rem" >Manual</Button>
             </Box>
 
-            <Box>
-              <label>KM driven</label>
-              <Input value={kmDriven} onChange={(e) =>setKMDriven(e.target.value)} type="number" />
-            </Box>
-            <Box>
-              <label>No. of Owners</label>
+            <Box marginBottom="1rem">
+              <label>KM driven*</label>
               <br />
-              <Button>1st</Button>
-              <Button>2nd</Button>
-              <Button>3rd</Button>
-              <Button>4+</Button>
+              <Input width="md" value={kmDriven} onChange={(e) =>setKMDriven(e.target.value)} type="number" />
+            </Box>
+            <Box marginBottom="1rem">
+              <label>No. of Owners*</label>
+              <br />
+              <Button  marginLeft="1rem">1st</Button>
+              <Button  marginLeft="1rem">2nd</Button>
+              <Button  marginLeft="1rem">3rd</Button>
+              <Button  marginLeft="1rem">4+</Button>
             </Box>
 
-            <Box>
-              <label>Ad title</label>
+            <Box marginBottom="1rem">
+              <label>Ad title*</label>
               <br />
-              <Input value={title} onChange={(e) =>setTitle(e.target.value)}
+              <Input width="md" value={title} onChange={(e) =>setTitle(e.target.value)}
                 placeholder="Mention the key features of your item (e.g. brand, model, age, type)"
                 type="text"
               />
             </Box>
 
-            <Box>
-              <label>Description</label>
+            <Box marginBottom="1rem">
+              <label>Description*</label>
               <br />
-              <textarea
+              <Textarea 
+               width="md"
               value={description} onChange={(e) =>setDescription(e.target.value)}
                 placeholder="Include condition, features and reason for selling"
                 cols="30"
                 rows="10"
-              ></textarea>
+              ></Textarea>
+            </Box >
+
+            <Box marginBottom="1rem" >
+              <Text fontSize="md" marginBottom="1rem" fontWeight="bold" >SET A PRICE</Text>
+              <label>Price*</label>
+              <br />
+              <Input width="md" value={price} onChange={(e) =>setPrice(e.target.value)} type="number" />
             </Box>
 
-            <Box>
-              <Text fontSize="2xl" fontWeight="bold" >SET A PRICE</Text>
-              <label>Price</label>
+            <Box  marginBottom="1rem"  >
+              <Text fontSize="md" marginBottom="1rem" fontWeight="bold">UPLOAD UP TO 20 PHOTOS</Text>
+              <label >Image URL*</label>
               <br />
-              <Input value={price} onChange={(e) =>setPrice(e.target.value)} type="number" />
-            </Box>
-
-            <Box>
-              <Text fontSize="2xl" fontWeight="bold">UPLOAD UP TO 20 PHOTOS</Text>
-              <label >Image URL</label>
-              <br />
-              <Input required type="url" value={image} onChange={(e)=>setImage(e.target.value)}  />
+              <Input width="md" required type="url" value={image} onChange={(e)=>setImage(e.target.value)}  />
               {/* <Input  type="file" onChange="readURL(this)" accept="Image/*" /> */}
             </Box>
 
-            <Box>
-              <Text fontSize="2xl" fontWeight="bold">CONFIRM YOUR LOCATION</Text>
-              <label>State</label>
+            <Box  marginBottom="1rem" >
+              <Text fontSize="md" marginBottom="1rem" fontWeight="bold">CONFIRM YOUR LOCATION</Text>
+              <label>State*</label>
               <br />
-              <Select value={location} onChange={(e) =>setLocation(e.target.value)} required >
+              <Select width="md" value={location} onChange={(e) =>setLocation(e.target.value)} required >
                 <option ></option>
                 <option >Andaman &amp; Nicobar Islands</option>
                 <option >Andhra Pradesh</option>
@@ -244,17 +246,17 @@ function SellFormComponent() {
                 <option >Uttaranchal</option>
                 <option >West Bengal</option>
               </Select>
-            </Box>
+            </Box >
 
-            <Box>
-              <Text fontSize="2xl" fontWeight="bold">REVIEW YOUR DETAILS</Text>
+            <Box  marginBottom="1rem"   >
+              <Text fontSize="md" marginBottom="1rem" fontWeight="bold" paddingTop="1rem">REVIEW YOUR DETAILS</Text>
               <Box style={{display:"flex",justifyContent:"space-between",maxW:"50%"}}>
-                <img   height={"30px"} width={"30px"} src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="user logo" />
-                 <Input value={userName} onChange={(e) =>setUserName(e.target.value)}  type="text"placeholder="your name" />
+                <Img   height={"30px"} width={"30px"} src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="user logo" />
+                 <Input width="md" value={userName} onChange={(e) =>setUserName(e.target.value)}  type="text"placeholder="your name" />
               </Box>
             </Box>
 
-            <Button onClick={handlePostReq} type="submit">Post now</Button>
+            <Button margin="auto" onClick={handlePostReq} type="submit">Post now</Button>
 
           </form>
         </Box>
