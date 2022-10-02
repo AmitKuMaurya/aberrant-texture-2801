@@ -19,7 +19,9 @@ export const MainRoutes = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/cars" element={<Car />} />
-      <Route path="/adslist" element={<AdsList />} />
+      <Route path="/adslist" element={<PrivateRoute>
+        <AdsList />
+      </PrivateRoute>} />
       <Route path="/adslist/:id" element={<SingleAdsItem />} />
       <Route path="/cars/:id" element={<SingleCar />} />
       <Route path="/bikes" element={<Bike />} />

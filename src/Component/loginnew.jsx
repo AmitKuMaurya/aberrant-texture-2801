@@ -60,7 +60,8 @@ function Login({ onOpen, isOpen, onClose }) {
       .then((r) => {
         console.log(r);
         setIsAuth(true);
-        navigate("/");
+        onclose();
+        // navigate("/");
       })
       .catch((err) => {
         console.log(err, "kk");
@@ -75,8 +76,10 @@ function Login({ onOpen, isOpen, onClose }) {
       .then((users) => {
         const uuue = users.user;
         console.log(uuue);
+        
         setIsAuth(true);
-        navigate("/");
+        // navigate("/");
+        onclose()
         //Setsuccess(1)
       })
       .catch((err) => {
@@ -134,7 +137,7 @@ function Login({ onOpen, isOpen, onClose }) {
                       from previous page.
                     </Text>
                   </Box>
-                  <Button w="100%" size="lg" onClick={SignIn}>
+                  <Button w="100%" size="lg" onClick={SignIn} >
                     Submit
                   </Button>
                   <Text px={5} align="center">
