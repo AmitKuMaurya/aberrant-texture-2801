@@ -6,7 +6,7 @@ import { GiFuelTank, GiAutomaticSas } from "react-icons/gi";
 import { BsSpeedometer2, BsCalendar2Date } from "react-icons/bs";
 import { AiOutlineUser } from "react-icons/ai";
 import { GoLocation } from 'react-icons/go'
-import { Box, Img } from '@chakra-ui/react';
+import { Box, Heading, Img, Text } from '@chakra-ui/react';
 
 
 function SingleAdsItem() {
@@ -55,16 +55,16 @@ function SingleAdsItem() {
           {/* left side of container */}
           <Box style={{ display: "flex", flexDirection: "column" }} >
             <Box style={{ textAlign: "left", boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", padding: "0.5rem 1rem", marginBottom: "1rem" }}>
-              <h2>{currentShoes.cars}</h2>
-              <p>{currentShoes.title}</p>
-              <Box>
+              <Heading marginBottom="1rem" >{currentShoes.cars}</Heading>
+              <Text marginBottom="1rem" >{currentShoes.title}</Text>
+              <Box display="flex"  >
                 <GiFuelTank /> <span style={{ color: "grey", marginRight: "1rem" }}>CNG & PETROL</span>
-                <BsSpeedometer2 /> <span style={{ color: "grey", marginRight: "1rem" }}>{currentShoes.kmDriven}</span>
+                <BsSpeedometer2 /> <span style={{ color: "grey", marginRight: "1rem" }}>{currentShoes.kmDriven}</span> 
                 <GiAutomaticSas /> <span style={{ color: "grey", marginRight: "1rem" }}>AUTOMATIC</span>
               </Box>
             </Box>
             <Box style={{ textAlign: "left", boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", padding: "0.5rem 1rem", marginBottom: "1rem" }}>
-              <h2 style={{ color: "grey", borderBottom: "1px solid grey" }}>Overview</h2>
+              <Heading as="h4" size="lg" style={{ color: "grey", borderBottom: "1px solid grey" }}>Overview</Heading>
               <Box style={{ color: "grey", display: "flex", flexDirection: "row", justifyContent: "space-around", marginLeft: "-5rem" }} >
                 <Box style={{ color: "black", fontSize: "1rem", display: "flex", flexDirection: "column" }}>
                   <AiOutlineUser /> <span>Owner</span>
@@ -83,8 +83,8 @@ function SingleAdsItem() {
               </Box>
             </Box>
             <Box style={{ textAlign: "left", boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px", padding: "0.5rem 1rem", marginBottom: "1rem" }} >
-              <h2 style={{ borderBottom: "1px solid grey", color: 'grey' }} >Description</h2>
-              <p>{currentShoes.description}</p>
+              <Heading as="h4" size="lg" style={{ borderBottom: "1px solid grey", color: 'grey' }} >Description</Heading>
+              <Text>{currentShoes.description}</Text>
             </Box>
           </Box>
 
@@ -97,8 +97,8 @@ function SingleAdsItem() {
             </Box>
 
           <Box  style={{ boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",textAlign:"left",padding:"0.5rem 1rem" }}>
-            <p>POST BY</p>
-            <h3>{currentShoes.userName}</h3>
+            <Text>POST BY</Text>
+            <Heading>{currentShoes.userName}</Heading>
             <p>Your ad expires on: {a}/{b}/{c}</p>
 
             <Box>
