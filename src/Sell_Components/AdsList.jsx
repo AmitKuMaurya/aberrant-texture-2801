@@ -6,17 +6,15 @@ import AdsCard from "./AdsCard";
 
 function AdsList() {
   const dispatch = useDispatch();
-  const product = useSelector((store) => {
-    return store.PostReducer.aidDetails;
-  });
-
-  console.log(product);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  console.log(product);
+  const product = useSelector((store) => {
+    return store.PostReducer.aidDetails;
+  });
+
   return (
     <>
       <Heading
