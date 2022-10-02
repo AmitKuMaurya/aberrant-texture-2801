@@ -5,7 +5,6 @@ import {
   ChevronDownIcon,
   CopyIcon,
   ExternalLinkIcon,
-  PlusSquareIcon,
   QuestionIcon,
   SearchIcon,
   SettingsIcon,
@@ -32,25 +31,27 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import React, { useContext, useEffect, useState } from "react";
-import { FaChevronDown, FaChevronUp, FaUser, FaUserAlt } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaChevronDown, FaChevronUp, FaUser } from "react-icons/fa";
 import "./Navbar.css";
 import SellButtonPlus from "./SellButtonPlus";
 import olxlogo from "../Image/olxlogo.png";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Footer } from "./Footer";
 import AllCategories from "./AllCategories";
 import { Login } from "./loginnew";
-import { AuthContext } from "../Context/AuthContext";
+// import { AuthContext } from "../Context/AuthContext";
+import { useDispatch, useSelector } from "react-redux";
 
 const fetchData = (query) => {
   axios("");
 };
 
 export const Navbar = () => {
-  const { isAuth, setIsAuth } = useContext(AuthContext);
+  // const { isAuth, setIsAuth } = useContext(AuthContext);
+  const isAuth = useSelector((store) => store.AuthReducer.isAuth);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [query, setQuery] = useState("");
@@ -127,7 +128,11 @@ export const Navbar = () => {
                 align="center"
                 cursor="pointer"
               >
-                <SearchIcon mt="30%" color="white" />
+                <SearchIcon
+                  mt="30%"
+                  color="white"
+                  onClick={() => fetchData(query)}
+                />
               </Box>
             </HStack>
           </GridItem>
@@ -225,7 +230,7 @@ export const Navbar = () => {
                         <Button
                           variant="link"
                           color="black"
-                          onClick={() => setIsAuth(false)}
+                          onClick={() => dispatch({ type: "LOGOUT" })}
                         >
                           Log Out
                         </Button>
@@ -246,16 +251,16 @@ export const Navbar = () => {
                 </>
               )}
 
-              <Link to={"/sellpost"}>
-              <Button
-                _hover={{ bgColor: "white" }}
-                bgColor="white"
-                borderRadius="30px"
-                className="sellbtn"
-              >
-                <SellButtonPlus />
-                Sell
-              </Button>
+              <Link to="/sellpost">
+                <Button
+                  _hover={{ bgColor: "white" }}
+                  bgColor="white"
+                  borderRadius="30px"
+                  className="sellbtn"
+                >
+                  <SellButtonPlus />
+                  Sell
+                </Button>
               </Link>
             </HStack>
           </GridItem>

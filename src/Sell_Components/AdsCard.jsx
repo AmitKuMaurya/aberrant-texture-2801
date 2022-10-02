@@ -64,7 +64,7 @@ function AdsCard({
 
         <Link
           style={{ textDecoration: "none", color: "black" }}
-          to={`/adsrows/${id}`}
+          to={`/adslist/${id}`}
         >
           <Box
             style={{

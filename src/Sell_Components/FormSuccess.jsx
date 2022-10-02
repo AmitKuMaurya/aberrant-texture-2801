@@ -61,7 +61,7 @@ function FormSuccess() {
                 </Button>
                 {/* <Link to={`/adsrows`} > */}
                     <button 
-                    onClick={()=>navigate(`/adsrows`)}
+                    onClick={()=>navigate(`/adslist`)}
                         style={{
                             border: "2px solid #002f34",
                             backgroundColor: "white",
