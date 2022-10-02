@@ -1,48 +1,44 @@
 import {
   Box,
   Button,
-  CloseButton,
   HStack,
   Img,
   Input,
   Link,
-  LinkBox,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
   Stack,
   Text,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import notificationsImg from "../Image/notifications.webp";
 import { FaGoogle, FaMobile } from "react-icons/fa";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import olxlogo from "../Image/olxlogo.png";
-import {
-  GoogleAuthProvider,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-} from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../Firebase/firebase-config";
 import { PhoneAuth } from "./PhoneAuth";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../Context/AuthContext";
+// import { AuthContext } from "../Context/AuthContext";
+import { useDispatch } from "react-redux";
+import { login } from "../Redux/Auth/action";
 
-function Login({ onOpen, isOpen, onClose }) {
-  const { setIsAuth, setToken } = useContext(AuthContext);
-  // console.log(setIsAuth, setToken);
+function Login({ isOpen, onClose }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const toast = useToast();
 
   const [isEmailLogin, setisEmailLogin] = useState(1);
-  const [isPhone, setPhone] = useState(0);
+
   const [loginUser, setLoginUser] = useState({
-    email: "",
-    password: "",
+    email: "eve.holt@reqres.in",
+    password: "olx.in",
   });
   const HandleLogin = (e) => {
     const { name, value } = e.target;
@@ -59,7 +55,7 @@ function Login({ onOpen, isOpen, onClose }) {
     signInWithPopup(auth, googleProvider)
       .then((r) => {
         console.log(r);
-        setIsAuth(true);
+        // setIsAuth(true);
         navigate("/");
       })
       .catch((err) => {
@@ -67,22 +63,43 @@ function Login({ onOpen, isOpen, onClose }) {
       });
   };
   const SignIn = () => {
-    const Users = signInWithEmailAndPassword(
-      auth,
-      loginUser.email,
-      loginUser.password
-    )
-      .then((users) => {
-        const uuue = users.user;
-        console.log(uuue);
-        setIsAuth(true);
-        navigate("/");
-        //Setsuccess(1)
-      })
-      .catch((err) => {
-        console.log(err.message, "error");
-        //Setsuccess(-1)
-      });
+    // console.log(loginUser);
+    dispatch(login(loginUser)).then((res) => {
+      if (res.type === "LOGIN_SUCCESS") {
+        toast({
+          title: "Login Successfull.",
+          description: "We've Log in your account",
+          status: "success",
+          duration: 1000,
+          isClosable: true,
+        });
+      } else {
+        toast({
+          title: "Login Fail.",
+          description: "There Is Some Error.",
+          status: "error",
+          duration: 2000,
+          isClosable: true,
+        });
+      }
+    });
+
+    // const Users = signInWithEmailAndPassword(
+    //   auth,
+    //   loginUser.email,
+    //   loginUser.password
+    // )
+    //   .then((users) => {
+    //     const uuue = users.user;
+    //     console.log(uuue);
+    //     setIsAuth(true);
+    //     navigate("/");
+    //     //Setsuccess(1)
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.message, "error");
+    //     //Setsuccess(-1)
+    //   });
     //Setsuccess(1)
   };
   return (
@@ -93,7 +110,7 @@ function Login({ onOpen, isOpen, onClose }) {
           <ModalCloseButton />
 
           <ModalBody>
-            {isEmailLogin == 2 ? (
+            {isEmailLogin === 2 ? (
               <>
                 <ModalHeader>
                   <ArrowBackIcon
@@ -115,6 +132,7 @@ function Login({ onOpen, isOpen, onClose }) {
                       size="lg"
                       focusBorderColor="teal.300"
                       name="email"
+                      value={loginUser.email}
                       onChange={HandleLogin}
                     />
                   </Stack>
@@ -125,6 +143,7 @@ function Login({ onOpen, isOpen, onClose }) {
                       size="lg"
                       focusBorderColor="teal.300"
                       name="password"
+                      value={loginUser.password}
                       onChange={HandleLogin}
                     />
                   </Stack>
@@ -143,7 +162,7 @@ function Login({ onOpen, isOpen, onClose }) {
                   </Text>
                 </VStack>
               </>
-            ) : isEmailLogin == 1 ? (
+            ) : isEmailLogin === 1 ? (
               <>
                 <VStack h="70vh">
                   <Box p={5} h="200px">
@@ -201,7 +220,7 @@ function Login({ onOpen, isOpen, onClose }) {
                   </Text>
                 </VStack>
               </>
-            ) : isEmailLogin == 3 ? (
+            ) : isEmailLogin === 3 ? (
               <>
                 <ArrowBackIcon
                   color="red.500"
