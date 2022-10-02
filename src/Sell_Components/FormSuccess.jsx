@@ -1,8 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import {Box, Button, Img} from "@chakra-ui/react";
+// import { useEffect } from "react";
 // import {IoMdCheckmark} from 'react-icons/io';
 function FormSuccess() {
+
+    const navigate = useNavigate();
+
+    // useEffect(()=>{
+    //     navigate();
+    // })
+
     return (
         <>
             {/* <IoMdCheckmark fontSize={"5rem"} /> */}
@@ -51,8 +59,9 @@ function FormSuccess() {
                 >
                     Sell Faster Now
                 </Button>
-                <Link to={"/adslist"} >
-                    <Button
+                {/* <Link to={`/adsrows`} > */}
+                    <button 
+                    onClick={()=>navigate(`/adsrows`)}
                         style={{
                             border: "2px solid #002f34",
                             backgroundColor: "white",
@@ -64,8 +73,8 @@ function FormSuccess() {
                         }}
                     >
                         Preview Aid
-                    </Button>
-                </Link>
+                    </button>
+                {/* </Link> */}
             </div>
             </Box>
         </>
