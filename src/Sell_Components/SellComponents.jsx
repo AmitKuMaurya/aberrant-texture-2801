@@ -78,7 +78,7 @@ const categorylist = [
   },
 ];
 
-function SellPage() {
+function SellComponents() {
   return (
     <>
       <Heading
@@ -156,4 +156,4 @@ function SellPage() {
   );
 }
 
-export default SellPage;
+export default SellComponents;

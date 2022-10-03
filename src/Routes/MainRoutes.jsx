@@ -15,7 +15,8 @@ import SellFormPage from "../MainRoutes/SellFormPage";
 import AdsList from "../Sell_Components/AdsList";
 // import AdsList from "../Sell_Components/AdsList";
 import FormSuccess from "../Sell_Components/FormSuccess";
-import SellFormComponent from "../Sell_Components/SellFormComponent";
+import SellPage from "../Sell_Components/SellComponents";
+// import SellFormComponent from "../Sell_Components/SellFormComponent";
 import PrivateRoute from "./PrivateRoute";
 
 export const MainRoutes = () => {
@@ -58,7 +59,7 @@ export const MainRoutes = () => {
         path="/sellpost"
         element={
           <PrivateRoute>
-            <SellFormComponent />
+            <SellPage />
           </PrivateRoute>
         }
       />

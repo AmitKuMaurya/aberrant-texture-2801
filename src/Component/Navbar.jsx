@@ -251,7 +251,7 @@ export const Navbar = () => {
                 </>
               )}
 
-              <Link to="/sellpost">
+              <Link to={"/sellpost"}>
                 <Button
                   _hover={{ bgColor: "white" }}
                   bgColor="white"
