@@ -1,6 +1,6 @@
-# Netmeds Website Clone
+# Olx Website Clone
 
-![image](https://user-images.githubusercontent.com/91751062/191099696-c49c0d5f-128f-4481-8a8c-6cbb6e38298e.png)
+![image](https://user-images.githubusercontent.com/91751062/199089600-613aeb65-4a5f-4e17-aa50-195f5acec9b1.png)
 
 
 What is this? ☝️
@@ -21,6 +21,10 @@ OLX makes it so easy to connect people to buy, sell or exchange used goods and s
 ⚡️ Cart Page
 </br>
 ⚡️ React - Routing 
+</br>
+⚡️ Product Category Page With Filter Functionality 
+</br>
+⚡️ Ad Preview Page and Sell Page
 </br>
 
 
