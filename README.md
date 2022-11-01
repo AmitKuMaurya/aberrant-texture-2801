@@ -45,4 +45,4 @@ OLX makes it so easy to connect people to buy, sell or exchange used goods and s
 
 
 # Demo Link
-➡https://netmeds-clone-lcse55y1k-shaileshwebdeveloper.vercel.app/
+➡https://aberrant-texture-2801.vercel.app/
