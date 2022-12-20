@@ -5,7 +5,7 @@ import * as types from "./actionTypes";
 const getBikes = (params) => (dispatch) => {
     dispatch({ type: types.GET_BIKES_REQUEST });
     return axios
-      .get("https://olx-project-api.herokuapp.com/bikes", params)
+      .get("https://project-api-ytxm.onrender.com/olxbikes", params)
       .then((r) => {
         dispatch({ type: types.GET_BIKES_SUCCESS, payload: r.data });
       })

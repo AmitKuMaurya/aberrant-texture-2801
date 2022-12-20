@@ -18,11 +18,11 @@ import Navbar from "./Navbar";
 export const HomePage = () => {
   const [product, setProduct] = useState([]);
   const [mobiles, setMobiles] = useState([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("https://olx-project-api.herokuapp.com/cars", {
+      .get("https://project-api-ytxm.onrender.com/olxcars", {
         params: {
           _limit: 10,
         },
@@ -37,7 +37,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     axios
-      .get("https://olx-project-api.herokuapp.com/mobiles", {
+      .get("https://project-api-ytxm.onrender.com/olxmobiles", {
         params: {
           _limit: 10,
         },
